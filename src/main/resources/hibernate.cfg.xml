@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <hibernate-configuration>
-    <session-factory></session-factory>
+    <session-factory>
+        <mapping class="pl.Shop.Database.Models.User"/>
+        <mapping class="pl.Shop.Database.Models.Order"/>
+    </session-factory>
 </hibernate-configuration>

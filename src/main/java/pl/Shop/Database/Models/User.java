@@ -1,8 +1,11 @@
 package pl.Shop.Database.Models;
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table
+@Table(name = "User")
 public class User {
     public User() {
     }
@@ -13,10 +16,24 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "id")
+    private int id;
 
-    @Column
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "pasword")
+    private String password;
+
+    @Column(name = "isAdmin")
+    private boolean isAdmin;
+
+    @Column(name = "balance")
+    private BigDecimal balance;
+
+    @OneToMany(mappedBy = "User", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+            CascadeType.REFRESH })
+    private List<Order> orders;
 
 
 
@@ -26,5 +43,37 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
     }
 }

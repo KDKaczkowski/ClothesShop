@@ -46,9 +46,11 @@ public class App extends Application {
         session.save(user);
         User savedUser = session.get(User.class, 1);
         System.out.println("----------------"+ savedUser.getName());
+
+        launch();
+        System.out.println("----------------"+ savedUser.getName());
         session.close();
         sessionFactory.close();
-        launch();
     }
 
 }
