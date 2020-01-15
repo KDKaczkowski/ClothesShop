@@ -1,4 +1,6 @@
 package pl.Shop.Database.Models;
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -14,26 +16,32 @@ public class User {
         this.name = name;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
 
+
+    @Id
     @Column(name = "name")
+    @NotNull
     private String name;
 
     @Column(name = "pasword")
+    @NotNull
     private String password;
 
     @Column(name = "isAdmin")
+    @NotNull
     private boolean isAdmin;
 
+    @Column(name = "isLogged")
+    @NotNull
+    private boolean isLogged;
+
     @Column(name = "balance")
+    @NotNull
     private BigDecimal balance;
 
-    @OneToMany(mappedBy = "User", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
-            CascadeType.REFRESH })
-    private List<Order> orders;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Bucket> buckets;
 
 
 
@@ -61,6 +69,14 @@ public class User {
         isAdmin = admin;
     }
 
+    public boolean isLogged() {
+        return isLogged;
+    }
+
+    public void setLogged(boolean logged) {
+        isLogged = logged;
+    }
+
     public BigDecimal getBalance() {
         return balance;
     }
@@ -69,11 +85,11 @@ public class User {
         this.balance = balance;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public List<Bucket> getBuckets() {
+        return buckets;
     }
 
-    public void setOrders(ArrayList<Order> orders) {
-        this.orders = orders;
+    public void setBuckets(ArrayList<Bucket> buckets) {
+        this.buckets = buckets;
     }
 }

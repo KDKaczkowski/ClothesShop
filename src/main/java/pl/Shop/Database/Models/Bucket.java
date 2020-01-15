@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "Order")
-public class Order {
+@Table(name = "Bucket")
+public class Bucket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,14 +18,14 @@ public class Order {
     @Column(name = "summaryPrice")
     private BigDecimal summaryPrice;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
     private User user;
 
-    public Order() {
+    public Bucket() {
     }
 
-    public Order(boolean isActive, BigDecimal summaryPrice) {
+    public Bucket(boolean isActive, BigDecimal summaryPrice) {
         this.isActive = isActive;
         this.summaryPrice = summaryPrice;
     }
