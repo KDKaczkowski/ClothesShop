@@ -6,6 +6,7 @@ import pl.Shop.Database.HibernateUtil.Util;
 import pl.Shop.Database.Models.User;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
@@ -47,7 +48,6 @@ public class UserDao {
     }*/
 
     public void printAllUsers(){
-        Transaction transaction = null;
         StringBuilder output = new StringBuilder();
         try (Session session = Util.getSessionFactory().openSession()) {
             List< User > students = session.createQuery("from User", User.class).list();
@@ -61,10 +61,16 @@ public class UserDao {
                         ));
             System.out.println(output.toString());
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
             e.printStackTrace();
         }
+    }
+    public List< User > getAllUsers(){
+        List< User > users = new ArrayList<>();
+        try (Session session = Util.getSessionFactory().openSession()) {
+            users = session.createQuery("from User", User.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 }

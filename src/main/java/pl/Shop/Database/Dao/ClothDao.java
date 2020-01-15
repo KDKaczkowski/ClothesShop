@@ -6,6 +6,7 @@ import pl.Shop.Database.HibernateUtil.Util;
 import pl.Shop.Database.Models.Cloth;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClothDao {
@@ -18,7 +19,7 @@ public class ClothDao {
         cloth.setPrice(price);
         cloth.setSize(size);
         cloth.setQuantity(quantity);
-        int clothID = 0;
+        int clothID = -1;
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
@@ -35,8 +36,7 @@ public class ClothDao {
         return clothID;
     }
 
-    public void printAllUsers(){
-        Transaction transaction = null;
+    public void printAllClothes(){
         StringBuilder output = new StringBuilder();
         try (Session session = Util.getSessionFactory().openSession()) {
             List< Cloth > clothes = session.createQuery("from User", Cloth.class).list();
@@ -51,10 +51,17 @@ public class ClothDao {
             ));
             System.out.println(output.toString());
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
             e.printStackTrace();
         }
+    }
+
+    public List<Cloth> getAllClothes(){
+        List< Cloth > clothes = new ArrayList<>();
+        try (Session session = Util.getSessionFactory().openSession()) {
+            clothes = session.createQuery("from User", Cloth.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return clothes;
     }
 }

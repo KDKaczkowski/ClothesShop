@@ -3,6 +3,7 @@
     <session-factory>
         <mapping class="pl.Shop.Database.Models.User"/>
         <mapping class="pl.Shop.Database.Models.Bucket"/>
+        <mapping class="pl.Shop.Database.Models.BucketDetails"/>
         <mapping class="pl.Shop.Database.Models.Cloth"/>
     </session-factory>
 </hibernate-configuration>

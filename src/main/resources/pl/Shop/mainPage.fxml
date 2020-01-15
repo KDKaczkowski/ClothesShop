@@ -9,4 +9,7 @@
          <fx:include fx:id="topMenu" source="topMenu.fxml" />
       </VBox>
    </top>
+    <center>
+        <fx:include source="listClothes.fxml"/>
+    </center>
 </BorderPane>

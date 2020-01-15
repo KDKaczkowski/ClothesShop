@@ -2,6 +2,7 @@ package pl.Shop.Database.Models;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "Bucket")
@@ -21,6 +22,9 @@ public class Bucket {
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany(mappedBy = "bucket", cascade = CascadeType.ALL)
+    private List<BucketDetails> bucketDetails;
 
     public Bucket() {
     }
@@ -52,5 +56,21 @@ public class Bucket {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<BucketDetails> getBucketDetails() {
+        return bucketDetails;
+    }
+
+    public void setBucketDetails(List<BucketDetails> bucketDetails) {
+        this.bucketDetails = bucketDetails;
     }
 }

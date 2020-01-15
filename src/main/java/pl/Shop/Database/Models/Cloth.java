@@ -4,8 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "Cloth")
@@ -39,19 +38,8 @@ public class Cloth {
     @NotNull
     private int quantity;
 
-    @ManyToMany(cascade = {
-            CascadeType.ALL
-    })
-    @JoinTable(
-            name = "clothes_bucket",
-            joinColumns = {
-                    @JoinColumn(name = "cloth_id")
-            },
-            inverseJoinColumns = {
-                    @JoinColumn(name = "bucket_id")
-            }
-    )
-    Set<Bucket> projects = new HashSet<Bucket>();
+    @OneToMany(mappedBy = "cloth", cascade = CascadeType.ALL)
+    private List<BucketDetails> bucketDetails;
 
     public String getName() {
         return name;
@@ -101,11 +89,19 @@ public class Cloth {
         this.quantity = quantity;
     }
 
-    public Set<Bucket> getProjects() {
-        return projects;
+    public int getId() {
+        return id;
     }
 
-    public void setProjects(Set<Bucket> projects) {
-        this.projects = projects;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<BucketDetails> getBucketDetails() {
+        return bucketDetails;
+    }
+
+    public void setBucketDetails(List<BucketDetails> bucketDetails) {
+        this.bucketDetails = bucketDetails;
     }
 }
