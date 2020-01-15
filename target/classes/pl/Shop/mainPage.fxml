@@ -5,7 +5,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.Shop.Controllers.MainController">
    <top>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox minHeight="90.0" minWidth="350.0" BorderPane.alignment="CENTER">
          <fx:include fx:id="topMenu" source="topMenu.fxml" />
       </VBox>
    </top>
