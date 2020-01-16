@@ -4,6 +4,7 @@ package pl.Shop.Database.Models;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "BucketDetails")
@@ -20,6 +21,9 @@ public class BucketDetails {
     @Column
     @NotNull
     private int amountBought;
+
+    @Column
+    private BigDecimal cost;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "bucket_id")
@@ -60,5 +64,13 @@ public class BucketDetails {
 
     public void setCloth(Cloth cloth) {
         this.cloth = cloth;
+    }
+
+    public BigDecimal getCost() {
+        return cost;
+    }
+
+    public void setCost(BigDecimal cost) {
+        this.cost = cost;
     }
 }

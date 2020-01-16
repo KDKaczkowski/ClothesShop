@@ -2,6 +2,7 @@ package pl.Shop.Database.Dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import pl.Shop.Database.HibernateUtil.Util;
 import pl.Shop.Database.Models.User;
 
@@ -21,12 +22,10 @@ public class UserDao {
 
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession()) {
-            // start a transaction
             transaction = session.beginTransaction();
-            // save the student objects
             session.save(user);
-            // commit transaction
             transaction.commit();
+            session.close();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -43,9 +42,18 @@ public class UserDao {
 
     }
 
-    /*public User getUserByName(String name){
-
-    }*/
+    public User getUserByName(String name){
+        User user = new User();
+        try (Session session = Util.getSessionFactory().openSession()) {
+            Query query = session.createQuery("from User E WHERE E.name = :name", User.class);
+            query.setParameter("name", name);
+            user = (User) query.list().get(0);
+            session.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
 
     public void printAllUsers(){
         StringBuilder output = new StringBuilder();
@@ -54,12 +62,13 @@ public class UserDao {
             students.forEach(s -> output.append(
                             "Name: " + s.getName() + "\n"
                             + "Password: " + s.getPassword() + "\n"
-                            + "Is admin: " + s.isAdmin() + "\n"
-                            + "Is logged in: " + s.isLogged() + "\n"
+                            + "Is admin: " + s.getAdmin() + "\n"
+                            + "Is logged in: " + s.getLogged() + "\n"
                             + "Balance: " + s.getBalance() + "\n"
                             + "-----------------------------" + "\n"
                         ));
             System.out.println(output.toString());
+            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,6 +77,7 @@ public class UserDao {
         List< User > users = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()) {
             users = session.createQuery("from User", User.class).list();
+            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

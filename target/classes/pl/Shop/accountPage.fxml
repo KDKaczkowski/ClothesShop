@@ -25,12 +25,6 @@
             <Font name="System Italic" size="19.0" />
          </font>
       </Text>
-      <TableView prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
-        <columns>
-          <TableColumn maxWidth="400.0" prefWidth="150.0" text="Atrybut" />
-          <TableColumn maxWidth="550.0" minWidth="6.0" prefWidth="442.0" text="Wartość" />
-        </columns>
-      </TableView>
       <Button mnemonicParsing="false" onAction="#switchToMain" prefHeight="17.0" prefWidth="60.0" text="Back" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
          <GridPane.margin>
             <Insets left="50.0" />
@@ -42,5 +36,16 @@
             <Insets right="50.0" />
          </GridPane.margin>
       </Button>
+      <TableView fx:id="accountTableView" maxHeight="58.0" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="580.0" GridPane.rowIndex="1" GridPane.valignment="TOP">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name" />
+          <TableColumn fx:id="passwordColumn" prefWidth="150.0" text="Password" />
+            <TableColumn fx:id="adminColumn" prefWidth="120.0" text="is Admin" />
+            <TableColumn fx:id="balanceColumn" prefWidth="140.0" text="Balance" />
+        </columns>
+      </TableView>
    </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
 </GridPane>

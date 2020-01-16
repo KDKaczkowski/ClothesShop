@@ -1,6 +1,8 @@
-package pl.Shop.Database.FxModels;
+package pl.Shop.View.FxModels;
 
 import javafx.beans.property.*;
+import javafx.collections.ObservableList;
+import pl.Shop.Database.Models.BucketDetails;
 
 import java.math.BigDecimal;
 
@@ -13,6 +15,7 @@ public class ClothFx {
     private ObjectProperty<BigDecimal> price = new SimpleObjectProperty<>();
     private StringProperty size = new SimpleStringProperty();
     private IntegerProperty quantity = new SimpleIntegerProperty();
+    private ListProperty<BucketDetails> bucketDetails = new SimpleListProperty<>();
 
     public int getId() {
         return id.get();
@@ -96,5 +99,17 @@ public class ClothFx {
 
     public void setQuantity(int quantity) {
         this.quantity.set(quantity);
+    }
+
+    public ObservableList<BucketDetails> getBucketDetails() {
+        return bucketDetails.get();
+    }
+
+    public ListProperty<BucketDetails> bucketDetailsProperty() {
+        return bucketDetails;
+    }
+
+    public void setBucketDetails(ObservableList<BucketDetails> bucketDetails) {
+        this.bucketDetails.set(bucketDetails);
     }
 }

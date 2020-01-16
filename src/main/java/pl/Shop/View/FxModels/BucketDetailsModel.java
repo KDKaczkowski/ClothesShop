@@ -1,4 +1,4 @@
-package pl.Shop.Database.FxModels;
+package pl.Shop.View.FxModels;
 
 public class BucketDetailsModel {
 }

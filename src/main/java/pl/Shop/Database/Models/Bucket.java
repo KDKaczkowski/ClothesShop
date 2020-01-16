@@ -2,6 +2,7 @@ package pl.Shop.Database.Models;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,7 +25,7 @@ public class Bucket {
     private User user;
 
     @OneToMany(mappedBy = "bucket", cascade = CascadeType.ALL)
-    private List<BucketDetails> bucketDetails;
+    private List<BucketDetails> bucketDetails = new ArrayList<>();
 
     public Bucket() {
     }

@@ -1,5 +1,6 @@
 package pl.Shop;
 
+import pl.Shop.Database.Dao.ClothDao;
 import pl.Shop.Database.Dao.UserDao;
 import  pl.Shop.Database.HibernateUtil.Util;
 import javafx.application.Application;
@@ -41,11 +42,17 @@ public class App extends Application {
     public static void main(String[] args) {
 
         UserDao userDao = new UserDao();
+        ClothDao clothDao = new ClothDao();
 
         userDao.createNewUser("Kamil", "kanapeczka", false, new BigDecimal("9.50") );
         userDao.createNewUser("Aga", "assaadda", true, new BigDecimal("0.50") );
 
+        clothDao.createNewCloth("slawe", "T-shirt", "NewYorker", new BigDecimal(90.00), "XL", 70);
+        clothDao.createNewCloth("a jak", "shorts", "H&M", new BigDecimal(45.00), "S", 0);
+
         userDao.printAllUsers();
+
+        clothDao.printAllClothes();
         /*User user1 = new User();
         User user2 = new User();
 

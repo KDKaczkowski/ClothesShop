@@ -27,13 +27,13 @@ public class User {
     @NotNull
     private String password;
 
-    @Column(name = "isAdmin")
+    @Column(name = "admin")
     @NotNull
-    private boolean isAdmin;
+    private boolean admin;
 
-    @Column(name = "isLogged")
+    @Column(name = "logged")
     @NotNull
-    private boolean isLogged;
+    private boolean logged;
 
     @Column(name = "balance")
     @NotNull
@@ -41,7 +41,7 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Bucket> buckets;
+    private List<Bucket> buckets = new ArrayList<>();
 
 
 
@@ -61,20 +61,20 @@ public class User {
         this.password = password;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public boolean getAdmin() {
+        return admin;
     }
 
     public void setAdmin(boolean admin) {
-        isAdmin = admin;
+        this.admin = admin;
     }
 
-    public boolean isLogged() {
-        return isLogged;
+    public boolean getLogged() {
+        return logged;
     }
 
     public void setLogged(boolean logged) {
-        isLogged = logged;
+        this.logged = logged;
     }
 
     public BigDecimal getBalance() {

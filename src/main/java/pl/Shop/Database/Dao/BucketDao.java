@@ -4,23 +4,23 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.Shop.Database.HibernateUtil.Util;
 import pl.Shop.Database.Models.Bucket;
+import pl.Shop.Database.Models.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BucketDao {
 
-    private int createNewBucket(){
+    public int createNewBucket(){
         Bucket bucket = new Bucket();
-        int id = -1;
         Transaction transaction = null;
+        int id = -1;
         try (Session session = Util.getSessionFactory().openSession()) {
-            // start a transaction
             transaction = session.beginTransaction();
-            // save the student objects
             id = (int) session.save(bucket);
-            // commit transaction
             transaction.commit();
+            session.close();
+
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -28,15 +28,37 @@ public class BucketDao {
             e.printStackTrace();
         }
         return id;
+
+    }
+
+    public void updateBucketActivity(){
+
+    }
+
+    public void updateBucketSummaryPrice(){
+
+    }
+
+    public void updateBucketBucketDetails(){
+
     }
 
     private List<Bucket> getAllBuckets(){
         List<Bucket> buckets = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()){
             buckets = session.createQuery("from Bucket", Bucket.class).list();
+            session.close();
         } catch (Exception e){
             e.printStackTrace();
         }
         return buckets;
+    }
+
+    public List<Bucket> getAllBucketsOfUser(User user){
+        return new ArrayList<>();
+    }
+
+    public Bucket getActiveBucketOfUser(User user){
+        return new Bucket();
     }
 }

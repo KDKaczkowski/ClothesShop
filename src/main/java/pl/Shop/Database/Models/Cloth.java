@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -39,7 +40,7 @@ public class Cloth {
     private int quantity;
 
     @OneToMany(mappedBy = "cloth", cascade = CascadeType.ALL)
-    private List<BucketDetails> bucketDetails;
+    private List<BucketDetails> bucketDetails = new ArrayList<>();
 
     public String getName() {
         return name;

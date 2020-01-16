@@ -25,8 +25,7 @@ public class ClothDao {
             transaction = session.beginTransaction();
             clothID = (int) session.save(cloth);
             transaction.commit();
-            if(clothID == 0)
-                throw new Exception();
+            session.close();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -34,12 +33,26 @@ public class ClothDao {
             e.printStackTrace();
         }
         return clothID;
+
     }
+
+    public void updateClothQuantity(){
+
+    }
+
+    public void updateClothName(){
+
+    }
+
+    public void updateClothPrice(){
+
+    }
+
 
     public void printAllClothes(){
         StringBuilder output = new StringBuilder();
         try (Session session = Util.getSessionFactory().openSession()) {
-            List< Cloth > clothes = session.createQuery("from User", Cloth.class).list();
+            List< Cloth > clothes = session.createQuery("from Cloth", Cloth.class).list();
             clothes.forEach(s -> output.append(
                     "Name: " + s.getName() + "\n"
                             + "Type: " + s.getType() + "\n"
@@ -50,6 +63,7 @@ public class ClothDao {
                             + "-----------------------------" + "\n"
             ));
             System.out.println(output.toString());
+            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,7 +72,8 @@ public class ClothDao {
     public List<Cloth> getAllClothes(){
         List< Cloth > clothes = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()) {
-            clothes = session.createQuery("from User", Cloth.class).list();
+            clothes = session.createQuery("from Cloth", Cloth.class).list();
+            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
