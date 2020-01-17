@@ -109,4 +109,18 @@ public class ClothDao {
         return clothes;
     }
 
+    public List< Cloth > getClothesOfTypeAndBrand(Type type, Brand brand){
+        List< Cloth > clothes = new ArrayList<>();
+        try(Session session = Util.getSessionFactory().openSession()){
+            clothes = session.createQuery("FROM  Cloth C where  C.type = :type AND C.brand = :brand", Cloth.class)
+                    .setParameter("type", type)
+                    .setParameter("brand", brand)
+                    .list();
+            session.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return clothes;
+    }
+
 }

@@ -18,7 +18,7 @@
     <RowConstraints minHeight="80.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" onAction="#switchToLogin" prefHeight="80.0" prefWidth="130.0" text="Log out" GridPane.halignment="LEFT" />
+      <Button mnemonicParsing="false" onAction="#logout" prefHeight="80.0" prefWidth="130.0" text="Log out" GridPane.halignment="LEFT" />
       <Button mnemonicParsing="false" onAction="#switchToAccount" prefHeight="80.0" prefWidth="130.0" text="My Account" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Main Page" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
          <font>

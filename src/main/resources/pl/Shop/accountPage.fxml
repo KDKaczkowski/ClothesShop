@@ -2,9 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -16,8 +18,9 @@
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="600.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints fillHeight="false" maxHeight="64.0" minHeight="0.0" prefHeight="64.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="397.0" minHeight="10.0" prefHeight="333.0" vgrow="SOMETIMES" />
+      <RowConstraints fillHeight="false" maxHeight="64.0" minHeight="60.0" prefHeight="64.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="63.0" minHeight="63.0" prefHeight="63.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="63.0" prefHeight="200.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Page" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -25,13 +28,13 @@
             <Font name="System Italic" size="19.0" />
          </font>
       </Text>
-      <Button mnemonicParsing="false" onAction="#switchToMain" prefHeight="17.0" prefWidth="60.0" text="Back" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+      <Button mnemonicParsing="false" onAction="#switchToMain" prefHeight="40.0" prefWidth="60.0" text="Back" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
          <GridPane.margin>
             <Insets left="50.0" />
          </GridPane.margin>
       </Button>
       <Separator prefWidth="200.0" valignment="BOTTOM" GridPane.valignment="BOTTOM" />
-      <Button mnemonicParsing="false" onAction="#switchToLogin" text="Log out" GridPane.halignment="RIGHT">
+      <Button mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="60.0" text="Log out" GridPane.halignment="RIGHT">
          <GridPane.margin>
             <Insets right="50.0" />
          </GridPane.margin>
@@ -43,7 +46,36 @@
             <TableColumn fx:id="adminColumn" prefWidth="120.0" text="is Admin" />
             <TableColumn fx:id="balanceColumn" prefWidth="140.0" text="Balance" />
         </columns>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+         </GridPane.margin>
       </TableView>
+      <Label text="Deposit money:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDeposit" maxWidth="150.0" prefWidth="150.0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="120.0" top="20.0" />
+         </GridPane.margin>
+      </TextField>
+      <Button fx:id="depositButton" mnemonicParsing="false" onAction="#depositMoney" text="deposit" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="280.0" top="20.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="depositStatus" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="350.0" top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

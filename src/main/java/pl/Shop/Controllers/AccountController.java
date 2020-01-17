@@ -1,10 +1,12 @@
 package pl.Shop.Controllers;
 
+import antlr.StringUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import pl.Shop.App;
 import pl.Shop.Database.Dao.UserDao;
 import pl.Shop.Database.Models.User;
@@ -13,19 +15,25 @@ import pl.Shop.View.FxModels.UserFx;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.List;
 
 public class AccountController {
     @FXML
-    public TableView accountTableView;
+    private TableView accountTableView;
     @FXML
-    public TableColumn<UserFx, String> nameColumn;
+    private TableColumn<UserFx, String> nameColumn;
     @FXML
-    public TableColumn<UserFx, String> passwordColumn;
+    private TableColumn<UserFx, String> passwordColumn;
     @FXML
-    public TableColumn<UserFx, Boolean> adminColumn;
+    private TableColumn<UserFx, Boolean> adminColumn;
     @FXML
-    public TableColumn<UserFx, BigDecimal> balanceColumn;
+    private TableColumn<UserFx, BigDecimal> balanceColumn;
+
+    @FXML
+    private TextField txtDeposit;
+    @FXML
+    private Button depositButton;
+    @FXML
+    private Label depositStatus;
 
     @FXML
     private void initialize(){
@@ -43,7 +51,13 @@ public class AccountController {
 
 
     @FXML
-    private void switchToLogin() throws IOException {
+    private void logout() throws IOException {
+        UserDao userDao = new UserDao();
+        userDao.updateUserLoginStatus(
+                userDao.getLoggedUser().getName()
+                , false
+        );
+        System.out.println("Logged Out successfully");
         App.setRoot("loginPage");
     }
 
@@ -51,4 +65,38 @@ public class AccountController {
     private void switchToMain() throws IOException {
         App.setRoot("mainPage");
     }
+
+    @FXML
+    private void depositMoney() {
+        UserDao userDao = new UserDao();
+        User user = userDao.getLoggedUser();
+        int index = txtDeposit.getText().indexOf(".");
+        if(txtDeposit.getText().length() > index +2) {
+            try {
+                txtDeposit.setText(txtDeposit.getText().substring(0, index + 2));
+            } catch(IndexOutOfBoundsException e){
+                e.printStackTrace();
+            }
+        }
+        boolean isNumeric = userDao.isNumeric( txtDeposit.getText());
+        if(user == null
+                || txtDeposit.getText().isBlank()
+                || txtDeposit.getText().contains(" ")
+                || txtDeposit.getText().contains(",")
+                || !isNumeric )
+        {
+            depositStatus.setTextFill(Color.RED);
+            depositStatus.setText("Deposit Failed");
+        } else if( isNumeric ){
+            BigDecimal toDeposit = new BigDecimal(txtDeposit.getText());
+            userDao.updateUserBalance(user.getName(), toDeposit);
+            depositStatus.setTextFill(Color.GREEN);
+            depositStatus.setText("Deposit Successfully");
+            userDao.printAllUsers();
+        }else{
+            depositStatus.setTextFill(Color.RED);
+            depositStatus.setText("Deposit Failed");
+        }
+    }
+
 }

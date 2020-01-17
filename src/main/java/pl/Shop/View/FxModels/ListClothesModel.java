@@ -47,6 +47,52 @@ public class ListClothesModel {
         brands.forEach(s -> this.brandFxObservableList.add(ConverterBrand.convertToBrandFx( s )));
     }
 
+    public void filterClothesList(){
+        if(getTypeFxObjectProperty() != null && getBrandFxObjectProperty() != null){ //Filter by type and brand
+            filterClothesByTypeAndBrand();
+        }
+        else if (getTypeFxObjectProperty() != null){ //Filter by type
+            filterClothesByType();
+        }
+        else if (getBrandFxObjectProperty() != null){ // filter by brand
+            filterClothesByBrand();
+        }
+        else{ //No filter
+            clothesNoFilter();
+        }
+    }
+    private void clothesNoFilter(){
+        ClothDao clothDao = new ClothDao();
+        List< Cloth > cloths = clothDao.getAllClothes();
+        this.clothFxObservableList.clear();
+        cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
+    }
+
+    private void filterClothesByType(){
+        ClothDao clothDao = new ClothDao();
+        List< Cloth > cloths = clothDao.getClothesOfType( ConverterType.convertToType( getTypeFxObjectProperty() ) );
+        this.clothFxObservableList.clear();
+        cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
+
+    }
+
+    private void filterClothesByBrand(){
+        ClothDao clothDao = new ClothDao();
+        List< Cloth > cloths = clothDao.getClothesOfBrand( ConverterBrand.convertToBrand( getBrandFxObjectProperty() ) );
+        this.clothFxObservableList.clear();
+        cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
+    }
+
+    private void filterClothesByTypeAndBrand(){
+        ClothDao clothDao = new ClothDao();
+        List< Cloth > cloths = clothDao.getClothesOfTypeAndBrand(
+                ConverterType.convertToType( getTypeFxObjectProperty() ),
+                ConverterBrand.convertToBrand( getBrandFxObjectProperty() )
+                );
+        this.clothFxObservableList.clear();
+        cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
+     }
+
     public ObservableList<ClothFx> getClothFxObservableList() {
         return clothFxObservableList;
     }

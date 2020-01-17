@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -13,34 +14,48 @@
 
 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.Shop.Controllers.ListClothesController">
    <children>
-      <GridPane>
+      <GridPane prefHeight="55.0" prefWidth="615.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
             <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="140.0" />
-          <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="70.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+            <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="60.0" />
+          <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+          <ColumnConstraints minWidth="10.0" prefWidth="140.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints fillHeight="false" maxHeight="1.0" minHeight="1.0" prefHeight="1.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <ComboBox fx:id="typeComboBox" onAction="#filterOnActionComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <ComboBox fx:id="brandComboBox" onAction="#filterOnActionComboBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <ComboBox fx:id="brandComboBox" onAction="#filterOnActionComboBox" prefWidth="150.0" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Label text="Type" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Brand" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label text="Brand" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
             <Separator valignment="TOP" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES" />
             <Separator GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
-            <Separator GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
             <Separator GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
+            <Separator GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
+            <Separator GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
+            <Separator GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
+            <Button mnemonicParsing="false" onAction="#clearTypeComboBox" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#clearBrandComboBox" text="Clear" GridPane.columnIndex="5" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
       <TableView fx:id="clothesTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">

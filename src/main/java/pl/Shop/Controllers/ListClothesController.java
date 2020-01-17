@@ -60,5 +60,14 @@ public class ListClothesController {
     }
 
     public void filterOnActionComboBox() {
+        this.listClothesModel.filterClothesList();
+    }
+
+    public void clearTypeComboBox(ActionEvent actionEvent) {
+        this.typeComboBox.getSelectionModel().clearSelection();
+    }
+
+    public void clearBrandComboBox(ActionEvent actionEvent) {
+        this.brandComboBox.getSelectionModel().clearSelection();
     }
 }

@@ -12,6 +12,15 @@ import java.util.List;
 
 public class UserDao {
 
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
+
     public void createNewUser(String name, String password, boolean isAdmin, BigDecimal balance){
         User user = new User();
         user.setName(name);
@@ -34,10 +43,52 @@ public class UserDao {
         }
     }
 
-    public void updateUserBalance(String name){
+    public void updateUserBalance(String name, BigDecimal balance){
+        Transaction transaction = null;
+       balance =  balance.add( getUserBalance(name) );
+        try(Session session = Util.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+            session.createQuery("UPDATE User U SET U.balance = :balance WHERE  U.name = :name")
+                    .setParameter("balance", balance)
+                    .setParameter("name", name)
+                    .executeUpdate();
+            transaction.commit();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
 
+    public void updateUserLoginStatus(String name, boolean value){
+        Transaction transaction = null;
+        try(Session session = Util.getSessionFactory().openSession() ){
+            transaction = session.beginTransaction();
+            session.createQuery("UPDATE User U set U.logged = :value WHERE  U.name = :name")
+                    .setParameter("value", value)
+                    .setParameter("name", name)
+                    .executeUpdate();
+
+            transaction.commit();
+
+            session.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+    public void updateUserAdminAttribute(String name, boolean isAdmin){
+        try(Session session = Util.getSessionFactory().openSession()){
+            session.createQuery("UPDATE User set admin = :isAdmin where  name = :name")
+                    .setParameter("isAdmin", isAdmin)
+                    .setParameter("name", name)
+                    .executeUpdate();
+
+            session.close();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     public void updateUserPassword(String name){
 
     }
@@ -49,10 +100,28 @@ public class UserDao {
                     .setParameter("name", name)
                     .list().get(0);
             session.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IndexOutOfBoundsException e) {
+
+            user = null;
         }
         return user;
+    }
+
+    public User getLoggedUser(){
+        User user = new User();
+        try(Session session = Util.getSessionFactory().openSession() ){
+            user = session.createQuery("FROM User WHERE logged = true", User.class)
+                    .list().get(0);
+            session.close();
+        } catch (IndexOutOfBoundsException e){
+            user = null;
+        }
+        return  user;
+    }
+    public BigDecimal getUserBalance(String name){
+        User user = getUserByName(name);
+        return user.getBalance();
+
     }
 
     public void printAllUsers(){
@@ -83,4 +152,5 @@ public class UserDao {
         }
         return users;
     }
+
 }
