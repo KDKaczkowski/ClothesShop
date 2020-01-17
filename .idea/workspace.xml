@@ -2,47 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554ddf00-9544-4007-a4c5-0140c9924d0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BucketDetailsFx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BucketModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/BucketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/BucketDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/BucketDetailsFx.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/BucketDetailsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BucketDetailsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/BucketFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BucketFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/BucketModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/ClothFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/ClothModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/UserFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserFx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Bucket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/BucketDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/BucketDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Cloth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Cloth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/Shop/accountPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/Shop/accountPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Controllers/ListClothesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Controllers/ListClothesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Dao/BucketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Dao/BucketDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Dao/ClothDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Dao/ClothDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/BucketDetailsFx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/BucketDetailsModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/BucketFx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/BucketModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/ClothFx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/ClothModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/UserFx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/FxModels/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/Bucket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/Bucket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/BucketDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/BucketDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/Cloth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/Cloth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/Shop/Database/Models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Size.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothFx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothFx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pl/Shop/listClothes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pl/Shop/listClothes.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,36 +44,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="50" column="86" lean-forward="true" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="98" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="98" />
+            <state relative-caret-position="906">
+              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setClothFxObservableList#0;class#ListClothesModel#0" />
+                <element signature="method#setTypeFxObservableList#0;class#ListClothesModel#0" />
+                <element signature="method#setBrandFxObservableList#0;class#ListClothesModel#0" />
+                <element signature="method#setTypeFxObjectProperty#0;class#ListClothesModel#0" />
+                <element signature="method#setBrandFxObjectProperty#0;class#ListClothesModel#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterUser.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="102">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,23 +73,52 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/accountPage.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BrandFx.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/AccountController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+            <state relative-caret-position="136">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/TypeDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#0#32#1" expanded="true" />
+                <element signature="e#0#9#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Type.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#308#309#0" expanded="true" />
+                <element signature="e#340#341#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+              <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#0#32#1" expanded="true" />
@@ -146,46 +140,44 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserFx.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="705">
+              <caret line="108" column="23" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#User#0;class#User#0" />
+                <element signature="e#0#10#1" expanded="true" />
+                <element signature="e#0#10#1" expanded="true" />
+                <element signature="e#0#33#1" expanded="true" />
+                <element signature="e#0#37#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state relative-caret-position="306">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#Brand#0;class#Brand#0" />
+                <element signature="e#313#314#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/TypeFx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="86" selection-start-line="35" selection-start-column="8" selection-end-line="42" selection-end-column="86" />
+            <state relative-caret-position="136">
+              <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#817#818#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -208,7 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/hibernate.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/User.java" />
@@ -219,18 +210,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/registerPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/models/models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/models/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/HibernateUtil/Util.java" />
         <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/loginPage.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/topMenu.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/mainPage.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/listClothes.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/CartDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Bucket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Cloth.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/BucketDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/ClothFx.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels/UserFx.java" />
@@ -240,17 +227,30 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/BucketDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/FxModels/ClothModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/FxModels/ListClothesModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserFx.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/AccountController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/accountPage.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/pl/Shop/listClothes.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Size.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Cloth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothFx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/BrandDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterBrand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/TypeFx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BrandFx.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/TypeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Type.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java" />
       </list>
     </option>
   </component>
@@ -275,7 +275,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -405,6 +404,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,16 +468,18 @@
       <workItem from="1578931208034" duration="8067000" />
       <workItem from="1579038904458" duration="9986000" />
       <workItem from="1579114509774" duration="22057000" />
+      <workItem from="1579179293706" duration="141000" />
+      <workItem from="1579210940460" duration="9824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40110000" />
+    <option name="totallyTimeSpent" value="50075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.16204691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15831557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -510,7 +512,7 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15831557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -547,32 +549,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/module-info.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/PrimaryController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/SecondaryController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/primary.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/secondary.fxml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/TopMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/registerPage.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -588,35 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Size.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Type.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/topMenu.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="237" selection-start-line="10" selection-start-column="237" selection-end-line="10" selection-end-column="237" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/loginPage.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -625,45 +572,7 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/mainPage.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/listClothes.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="53" column="86" selection-start-line="53" selection-start-column="86" selection-end-line="53" selection-end-column="86" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/FxModels.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -695,83 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/BucketDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-          <folding>
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#662#663#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-            <element signature="e#1110#1111#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Cloth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1194#1195#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1257#1258#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1324#1325#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1416#1417#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1528#1529#0" expanded="true" />
-            <element signature="e#1556#1557#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1694#1695#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1798#1799#0" expanded="true" />
-            <element signature="e#1829#1830#0" expanded="true" />
-            <element signature="e#1874#1875#0" expanded="true" />
-            <element signature="e#1914#1915#0" expanded="true" />
-            <element signature="e#1701#1702#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1836#1837#0" expanded="true" />
-            <element signature="e#1870#1871#0" expanded="true" />
-            <element signature="e#1935#1936#0" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Bucket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -799,13 +631,6 @@
             <element signature="e#1499#1500#0" expanded="true" />
             <element signature="e#1545#1546#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothFx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="103" column="59" selection-start-line="103" selection-start-column="59" selection-end-line="103" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -880,136 +705,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/s.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterBucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/s.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterBucketDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="61" column="67" selection-start-line="61" selection-start-column="67" selection-end-line="61" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#9#1" expanded="true" />
-            <element signature="e#0#10#1" expanded="true" />
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="50" column="86" lean-forward="true" selection-start-line="50" selection-start-column="86" selection-end-line="50" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserFx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#User#0;class#User#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="98" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setClothFxObservableList#0;class#ListClothesModel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="86" selection-start-line="35" selection-start-column="8" selection-end-line="42" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#32#1" expanded="true" />
-            <element signature="e#0#9#1" expanded="true" />
-            <element signature="e#0#9#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,6 +720,344 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/UserFx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/topMenu.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="237" selection-start-line="10" selection-start-column="237" selection-end-line="10" selection-end-column="237" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/mainPage.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/pl/Shop/listClothes.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Size.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#User#0;class#User#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/BucketDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1249#1250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BrandModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/TypeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ClothFx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterBucket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterCloth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Cloth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="242" column="18" selection-start-line="242" selection-start-column="18" selection-end-line="242" selection-end-column="18" />
+          <folding>
+            <element signature="e#10105#10106#0" expanded="true" />
+            <element signature="e#10188#10189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/SizeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/BrandDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#33#1" expanded="true" />
+            <element signature="e#0#10#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterBrand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/ListClothesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Controllers/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Brand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="method#Brand#0;class#Brand#0" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/TypeFx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/BrandFx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/Converters/ConverterType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/TypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#32#1" expanded="true" />
+            <element signature="e#0#9#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Models/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="50" column="28" lean-forward="true" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#32#1" expanded="true" />
+            <element signature="e#0#9#1" expanded="true" />
+            <element signature="e#0#9#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/Database/Dao/ClothDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="108" column="23" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#10#1" expanded="true" />
+            <element signature="e#0#10#1" expanded="true" />
+            <element signature="e#0#33#1" expanded="true" />
+            <element signature="e#0#37#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/Shop/View/FxModels/ListClothesModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setClothFxObservableList#0;class#ListClothesModel#0" />
+            <element signature="method#setTypeFxObservableList#0;class#ListClothesModel#0" />
+            <element signature="method#setBrandFxObservableList#0;class#ListClothesModel#0" />
+            <element signature="method#setTypeFxObjectProperty#0;class#ListClothesModel#0" />
+            <element signature="method#setBrandFxObjectProperty#0;class#ListClothesModel#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

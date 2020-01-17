@@ -1,6 +1,8 @@
 package pl.Shop;
 
+import pl.Shop.Database.Dao.BrandDao;
 import pl.Shop.Database.Dao.ClothDao;
+import pl.Shop.Database.Dao.TypeDao;
 import pl.Shop.Database.Dao.UserDao;
 import  pl.Shop.Database.HibernateUtil.Util;
 import javafx.application.Application;
@@ -11,6 +13,9 @@ import javafx.stage.Stage;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import pl.Shop.Database.Models.Brand;
+import pl.Shop.Database.Models.Size;
+import pl.Shop.Database.Models.Type;
 import pl.Shop.Database.Models.User;
 import org.hibernate.cfg.Configuration;
 
@@ -43,12 +48,20 @@ public class App extends Application {
 
         UserDao userDao = new UserDao();
         ClothDao clothDao = new ClothDao();
+        BrandDao brandDao = new BrandDao();
+        TypeDao typeDao = new TypeDao();
+
+        brandDao.createNewBrand("Reserved");
+        brandDao.createNewBrand("Cropp");
+
+        typeDao.createNewType("T-shirt");
+        typeDao.createNewType("Shorts");
 
         userDao.createNewUser("Kamil", "kanapeczka", false, new BigDecimal("9.50") );
         userDao.createNewUser("Aga", "assaadda", true, new BigDecimal("0.50") );
 
-        clothDao.createNewCloth("slawe", "T-shirt", "NewYorker", new BigDecimal(90.00), "XL", 70);
-        clothDao.createNewCloth("a jak", "shorts", "H&M", new BigDecimal(45.00), "S", 0);
+        clothDao.createNewCloth("slawe", typeDao.getTypeByName("T-shirt"), brandDao.getBrandByName("Reserved"), new BigDecimal(90.00), Size.XL, 70);
+        clothDao.createNewCloth("a jak", typeDao.getTypeByName("Shorts"), brandDao.getBrandByName("Cropp"), new BigDecimal(45.00), Size.S, 0);
 
         userDao.printAllUsers();
 

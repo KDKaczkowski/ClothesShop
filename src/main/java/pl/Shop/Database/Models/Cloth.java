@@ -20,20 +20,22 @@ public class Cloth {
     @NotNull
     private String name;
 
-    @Column(name = "type")
-    private String type;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "type_id")
+    private Type type;
 
-    @Column(name = "brand")
-    @NotNull
-    private String brand;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
 
     @Column(name = "price")
     @NotNull
     private BigDecimal price;
 
     @Column(name = "size")
+    @Enumerated(EnumType.STRING)
     @NotNull
-    private String size;
+    private Size size;
 
     @Column(name = "quantity")
     @NotNull
@@ -50,19 +52,19 @@ public class Cloth {
         this.name = name;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
-    public String getBrand() {
+    public Brand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(Brand brand) {
         this.brand = brand;
     }
 
@@ -74,11 +76,11 @@ public class Cloth {
         this.price = price;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Size size) {
         this.size = size;
     }
 

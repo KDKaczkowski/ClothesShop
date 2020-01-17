@@ -13,7 +13,7 @@ public class ConverterCloth {
         cloth.setQuantity( clothFx.getQuantity() );
         cloth.setPrice( clothFx.getPrice() );
         cloth.setBrand( clothFx.getBrand() );
-        cloth.setType( clothFx.getBrand() );
+        cloth.setType( clothFx.getType() );
         //cloth.setBucketDetails( clothFx.getBucketDetails() );
         return cloth;
     }

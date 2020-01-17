@@ -3,7 +3,10 @@ package pl.Shop.Database.Dao;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.Shop.Database.HibernateUtil.Util;
+import pl.Shop.Database.Models.Brand;
 import pl.Shop.Database.Models.Cloth;
+import pl.Shop.Database.Models.Size;
+import pl.Shop.Database.Models.Type;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,7 +14,7 @@ import java.util.List;
 
 public class ClothDao {
 
-    public int createNewCloth(String name, String type, String brand, BigDecimal price, String size, int quantity){
+    public int createNewCloth(String name, Type type, Brand brand, BigDecimal price, Size size, int quantity){
         Cloth cloth = new Cloth();
         cloth.setName(name);
         cloth.setType(type);
@@ -55,8 +58,8 @@ public class ClothDao {
             List< Cloth > clothes = session.createQuery("from Cloth", Cloth.class).list();
             clothes.forEach(s -> output.append(
                     "Name: " + s.getName() + "\n"
-                            + "Type: " + s.getType() + "\n"
-                            + "Brand: " + s.getBrand() + "\n"
+                            + "Type: " + s.getType().getName() + "\n"
+                            + "Brand: " + s.getBrand().getName() + "\n"
                             + "Price: " + s.getPrice() + "\n"
                             + "Size: " + s.getSize() + "\n"
                             + "Quantity: " + s.getQuantity() + "\n"
@@ -79,4 +82,31 @@ public class ClothDao {
         }
         return clothes;
     }
+
+    public List<Cloth> getClothesOfType(Type type){
+        List< Cloth > clothes = new ArrayList<>();
+        try(Session session = Util.getSessionFactory().openSession()){
+            clothes = session.createQuery("FROM Cloth C WHERE C.type = :type", Cloth.class)
+                    .setParameter("type", type)
+                    .list();
+            session.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return  clothes;
+    }
+
+    public List< Cloth > getClothesOfBrand(Brand brand){
+        List< Cloth > clothes = new ArrayList<>();
+        try(Session session = Util.getSessionFactory().openSession()){
+            clothes = session.createQuery("FROM  Cloth C where  C.brand = :brand", Cloth.class)
+                    .setParameter("brand", brand)
+                    .list();
+            session.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return clothes;
+    }
+
 }

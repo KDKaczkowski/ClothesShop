@@ -45,9 +45,9 @@ public class UserDao {
     public User getUserByName(String name){
         User user = new User();
         try (Session session = Util.getSessionFactory().openSession()) {
-            Query query = session.createQuery("from User E WHERE E.name = :name", User.class);
-            query.setParameter("name", name);
-            user = (User) query.list().get(0);
+            user = (User) session.createQuery("from User E WHERE E.name = :name", User.class)
+                    .setParameter("name", name)
+                    .list().get(0);
             session.close();
         } catch (Exception e) {
             e.printStackTrace();

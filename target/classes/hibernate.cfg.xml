@@ -5,5 +5,7 @@
         <mapping class="pl.Shop.Database.Models.Bucket"/>
         <mapping class="pl.Shop.Database.Models.BucketDetails"/>
         <mapping class="pl.Shop.Database.Models.Cloth"/>
+        <mapping class="pl.Shop.Database.Models.Type"/>
+        <mapping class="pl.Shop.Database.Models.Brand"/>
     </session-factory>
 </hibernate-configuration>

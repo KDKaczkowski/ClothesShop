@@ -2,7 +2,10 @@ package pl.Shop.View.FxModels;
 
 import javafx.beans.property.*;
 import javafx.collections.ObservableList;
+import pl.Shop.Database.Models.Brand;
 import pl.Shop.Database.Models.BucketDetails;
+import pl.Shop.Database.Models.Size;
+import pl.Shop.Database.Models.Type;
 
 import java.math.BigDecimal;
 
@@ -10,10 +13,10 @@ public class ClothFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();
     private StringProperty name = new SimpleStringProperty();
-    private StringProperty type = new SimpleStringProperty();
-    private StringProperty brand = new SimpleStringProperty();
+    private ObjectProperty<Type> type = new SimpleObjectProperty<>();
+    private ObjectProperty<Brand> brand = new SimpleObjectProperty<>();
     private ObjectProperty<BigDecimal> price = new SimpleObjectProperty<>();
-    private StringProperty size = new SimpleStringProperty();
+    private ObjectProperty<Size> size = new SimpleObjectProperty<>();
     private IntegerProperty quantity = new SimpleIntegerProperty();
     private ListProperty<BucketDetails> bucketDetails = new SimpleListProperty<>();
 
@@ -41,30 +44,6 @@ public class ClothFx {
         this.name.set(name);
     }
 
-    public String getType() {
-        return type.get();
-    }
-
-    public StringProperty typeProperty() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type.set(type);
-    }
-
-    public String getBrand() {
-        return brand.get();
-    }
-
-    public StringProperty brandProperty() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand.set(brand);
-    }
-
     public BigDecimal getPrice() {
         return price.get();
     }
@@ -75,18 +54,6 @@ public class ClothFx {
 
     public void setPrice(BigDecimal price) {
         this.price.set(price);
-    }
-
-    public String getSize() {
-        return size.get();
-    }
-
-    public StringProperty sizeProperty() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size.set(size);
     }
 
     public int getQuantity() {
@@ -111,5 +78,42 @@ public class ClothFx {
 
     public void setBucketDetails(ObservableList<BucketDetails> bucketDetails) {
         this.bucketDetails.set(bucketDetails);
+    }
+
+
+    public Brand getBrand() {
+        return brand.get();
+    }
+
+    public ObjectProperty<Brand> brandProperty() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand.set(brand);
+    }
+
+    public Size getSize() {
+        return size.get();
+    }
+
+    public ObjectProperty<Size> sizeProperty() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size.set(size);
+    }
+
+    public Type getType() {
+        return type.get();
+    }
+
+    public ObjectProperty<Type> typeProperty() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type.set(type);
     }
 }
