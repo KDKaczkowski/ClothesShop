@@ -27,6 +27,7 @@ public class LoginController {
     @FXML
     private void login() throws IOException{
         UserDao userDao = new UserDao();
+        BasketDao basketDao = new BasketDao();
         User user = userDao.getUserByName( txtUsername.getText() );
         if ( user == null ) {
             loginStatus.setText("Login Failed");
@@ -34,7 +35,7 @@ public class LoginController {
         else if(user.getPassword().equals( txtPassword.getText())){
 
             userDao.updateUserLoginStatus( user.getName(), true);
-
+            userDao.addNewBasket();
             App.setRoot("mainPage");
         } else {
             loginStatus.setText("Login Failed");

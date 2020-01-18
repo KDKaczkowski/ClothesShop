@@ -73,6 +73,9 @@ public class ListClothesController {
 
                 if(!b){
                     setGraphic(button);
+                    button.setOnAction(actionEvent -> {
+                        listClothesModel.addToCart(clothFx);
+                    });
                 }
             }
         });

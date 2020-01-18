@@ -67,7 +67,7 @@
             <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
             <TableColumn fx:id="sizeColumn" prefWidth="50.0" text="Size" />
             <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Quantity" />
-            <TableColumn fx:id="buyClothColumn" prefWidth="75.0" text="Buy cloth" />
+            <TableColumn fx:id="buyClothColumn" prefWidth="75.0" text="Add to cart" />
         </columns>
       </TableView>
    </children>

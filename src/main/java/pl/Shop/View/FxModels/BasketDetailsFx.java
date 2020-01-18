@@ -13,7 +13,7 @@ public class BasketDetailsFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();
     private IntegerProperty amountBought = new SimpleIntegerProperty();
-    private ObjectProperty<BigDecimal> summaryPrice = new SimpleObjectProperty<>();
+    private ObjectProperty<BigDecimal> cost = new SimpleObjectProperty<>();
     private ObjectProperty<Cloth> cloth = new SimpleObjectProperty<>();
     private ObjectProperty<Basket> basket = new SimpleObjectProperty<>();
 
@@ -43,16 +43,16 @@ public class BasketDetailsFx {
         this.amountBought.set(amountBought);
     }
 
-    public BigDecimal getSummaryPrice() {
-        return summaryPrice.get();
+    public BigDecimal getCost() {
+        return cost.get();
     }
 
-    public ObjectProperty<BigDecimal> summaryPriceProperty() {
-        return summaryPrice;
+    public ObjectProperty<BigDecimal> costProperty() {
+        return cost;
     }
 
-    public void setSummaryPrice(BigDecimal summaryPrice) {
-        this.summaryPrice.set(summaryPrice);
+    public void setCost(BigDecimal cost) {
+        this.cost.set(cost);
     }
 
     public Cloth getCloth() {

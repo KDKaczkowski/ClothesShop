@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 public class BasketDetails {
 
     public BasketDetails() {
+        this.amountBought = 0;
+        this.cost = new BigDecimal(0);
     }
 
     @Id
@@ -34,6 +36,8 @@ public class BasketDetails {
     @ManyToOne(optional = false)
     @JoinColumn(name = "cloth_id")
     private Cloth cloth;
+
+
 
     public int getId() {
         return id;

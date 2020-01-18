@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.Shop.Database.HibernateUtil.Util;
 import pl.Shop.Database.Models.Basket;
+import pl.Shop.Database.Models.Cloth;
 import pl.Shop.Database.Models.User;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class BasketDao {
 
     }
 
-    public void updateBucketActivity(boolean isActive, User user){
+    public void updateBasketActivity(boolean isActive, User user){
         Transaction transaction = null;
         try(Session session = Util.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
@@ -49,11 +50,17 @@ public class BasketDao {
 
     }
 
-    public void updateBucketSummaryPrice(){
+    public void updateBasketSummaryPrice(){
 
     }
 
-    public void updateBucketBucketDetails(){
+    public void updateBasketBucketDetails(){
+
+    }
+
+    public void addBasketDetails(Cloth cloth){
+        BasketDetailsDao basketDetailsDao = new BasketDetailsDao();
+        basketDetailsDao.createNewBasketDetails(cloth);
 
     }
 
@@ -65,6 +72,7 @@ public class BasketDao {
                     "Id: " + s.getId() + "\n"
                             + "isActive: " + s.isActive() + "\n"
                             + "User name: " + s.getUser().getName() + "\n"
+                            + "Summary price: " + s.getSummaryPrice() + "\n"
                             + "-----------------------------" + "\n"
             ));
             System.out.println(output.toString());
@@ -74,7 +82,7 @@ public class BasketDao {
         }
     }
 
-    private List<Basket> getAllBuckets(){
+    private List<Basket> getAllBaskets(){
         List<Basket> baskets = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()){
             baskets = session.createQuery("from Basket", Basket.class).list();
@@ -85,11 +93,11 @@ public class BasketDao {
         return baskets;
     }
 
-    public List<Basket> getAllBucketsOfUser(User user){
+    public List<Basket> getAllBasketsOfUser(User user){
         return new ArrayList<>();
     }
 
-    public Basket getActiveBucketOfUser(User user){
+    public Basket getActiveBasketOfUser(User user){
         Basket basket = new Basket();
         basket = null;
         try (Session session = Util.getSessionFactory().openSession()){

@@ -1,4 +1,4 @@
 package pl.Shop.View.Converters;
 
-public class ConverterBucket {
+public class ConverterBasket {
 }

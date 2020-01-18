@@ -4,12 +4,11 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import pl.Shop.Database.Dao.BrandDao;
-import pl.Shop.Database.Dao.ClothDao;
-import pl.Shop.Database.Dao.TypeDao;
+import pl.Shop.Database.Dao.*;
 import pl.Shop.Database.Models.Brand;
 import pl.Shop.Database.Models.Cloth;
 import pl.Shop.Database.Models.Type;
+import pl.Shop.Database.Models.User;
 import pl.Shop.View.Converters.ConverterBrand;
 import pl.Shop.View.Converters.ConverterCloth;
 import pl.Shop.View.Converters.ConverterType;
@@ -139,5 +138,12 @@ public class ListClothesModel {
 
     public void setBrandFxObjectProperty(BrandFx brandFxObjectProperty) {
         this.brandFxObjectProperty.set(brandFxObjectProperty);
+    }
+
+    public void addToCart(ClothFx clothFx) {
+        UserDao userDao = new UserDao();
+        userDao.addClothToBasket( ConverterCloth.convertToCloth(clothFx) );
+        BasketDao basketDao = new BasketDao();
+        basketDao.printAllBaskets();
     }
 }

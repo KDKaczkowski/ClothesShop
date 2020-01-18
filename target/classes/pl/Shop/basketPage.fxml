@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.Shop.Controllers.BasketController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Your Account Balance:">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <Label fx:id="txtBalance">
+         <GridPane.margin>
+            <Insets left="130.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="To pay:" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets right="120.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="txtToPay" GridPane.halignment="CENTER">
+         <GridPane.margin>
+            <Insets right="45.0" />
+         </GridPane.margin>
+      </Label>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#payForClothes" prefHeight="60.0" prefWidth="80.0" text="Pay" GridPane.halignment="CENTER">
+         <GridPane.margin>
+            <Insets left="110.0" />
+         </GridPane.margin>
+      </Button>
+      <ImageView fitHeight="59.0" fitWidth="49.0" onMouseClicked="#payForClothes" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@../../image/3440914-bag-basket-cart-ecommerce-pay-shopping-store_107519.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="130.0" />
+         </GridPane.margin>
+      </ImageView>
+      <TableView fx:id="basketTableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="clothIdColumn" prefWidth="75.0" text="Cloth id" />
+          <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="brandColumn" prefWidth="75.0" text="Brand" />
+            <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
+            <TableColumn prefWidth="75.0" text="Delete" />
+        </columns>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </TableView>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToMain" prefHeight="60.0" prefWidth="100.0" text="Back" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets right="10.0" />
+         </GridPane.margin>
+      </Button>
+      <ImageView fitHeight="69.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@../../image/undominimono_105774.png" />
+         </image>
+         <GridPane.margin>
+            <Insets right="20.0" />
+         </GridPane.margin>
+      </ImageView>
+   </children>
+</GridPane>

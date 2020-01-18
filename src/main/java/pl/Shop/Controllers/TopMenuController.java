@@ -1,5 +1,6 @@
 package pl.Shop.Controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import pl.Shop.App;
 import pl.Shop.Database.Dao.UserDao;
@@ -19,7 +20,12 @@ public class TopMenuController {
     }
 
     @FXML
-    public void switchToAccount() throws IOException {
+    private void switchToAccount() throws IOException {
         App.setRoot("accountPage");
+    }
+
+    @FXML
+    private void switchToBasketPage() throws IOException{
+        App.setRoot("basketPage");
     }
 }

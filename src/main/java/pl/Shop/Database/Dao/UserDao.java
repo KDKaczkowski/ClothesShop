@@ -2,9 +2,9 @@ package pl.Shop.Database.Dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import pl.Shop.Database.HibernateUtil.Util;
 import pl.Shop.Database.Models.Basket;
+import pl.Shop.Database.Models.Cloth;
 import pl.Shop.Database.Models.User;
 
 import java.math.BigDecimal;
@@ -26,14 +26,11 @@ public class UserDao {
 
     public void createNewUser(String name, String password, boolean isAdmin, BigDecimal balance){
         User user = new User();
-        BasketDao basketDao = new BasketDao();
         user.setName(name);
         user.setPassword(password);
         user.setAdmin(isAdmin);
         user.setLogged(false);
         user.setBalance(balance);
-        //basketDao.createNewBasket(user);
-        //user.addBasket(  );
 
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -164,6 +161,7 @@ public class UserDao {
     public void addNewBasket(){
         if( userHaveActiveBasket() )
             return;
+
         basketDao.createNewBasket();
 
         /*Transaction transaction = null;
@@ -180,17 +178,36 @@ public class UserDao {
     }
 
     public boolean userHaveActiveBasket(){
+
         User user = getLoggedUser();
-        if( basketDao.getActiveBucketOfUser(user) != null){
+        if( basketDao.getActiveBasketOfUser(user) != null){
             return true;
         }
 
         return false;
     }
 
+    public Basket getActiveBasketOfLoggedUser(){
+        if( !userHaveActiveBasket() )
+            return null;
+        else
+            return basketDao.getActiveBasketOfUser( this.getLoggedUser() );
+    }
+
     public void deactivateUserBasket(){
+
         User user = getLoggedUser();
-        basketDao.updateBucketActivity(false, user);
+        basketDao.updateBasketActivity(false, user);
+    }
+
+    public void addClothToBasket(Cloth cloth){
+        if( userHaveActiveBasket() ){
+            //Basket basket = this.getActiveBasketOfLoggedUser();
+            basketDao.addBasketDetails(cloth);
+        } else {
+            this.addNewBasket();
+            basketDao.addBasketDetails(cloth);
+        }
     }
 
 }
