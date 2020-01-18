@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "Bucket")
-public class Bucket {
+@Table(name = "Basket")
+public class Basket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,13 +24,19 @@ public class Bucket {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "bucket", cascade = CascadeType.ALL)
-    private List<BucketDetails> bucketDetails = new ArrayList<>();
+    @OneToMany(mappedBy = "basket", cascade = CascadeType.ALL)
+    private List<BasketDetails> basketDetails = new ArrayList<>();
 
-    public Bucket() {
+    /*public Basket() {
+
+    }*/
+
+    public Basket(){
+        this.isActive = true;
+        this.summaryPrice = new BigDecimal(0.00);
     }
 
-    public Bucket(boolean isActive, BigDecimal summaryPrice) {
+    public Basket(boolean isActive, BigDecimal summaryPrice) {
         this.isActive = isActive;
         this.summaryPrice = summaryPrice;
     }
@@ -67,11 +73,11 @@ public class Bucket {
         this.id = id;
     }
 
-    public List<BucketDetails> getBucketDetails() {
-        return bucketDetails;
+    public List<BasketDetails> getBasketDetails() {
+        return basketDetails;
     }
 
-    public void setBucketDetails(List<BucketDetails> bucketDetails) {
-        this.bucketDetails = bucketDetails;
+    public void setBasketDetails(List<BasketDetails> basketDetails) {
+        this.basketDetails = basketDetails;
     }
 }

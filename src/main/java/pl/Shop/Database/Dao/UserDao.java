@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import pl.Shop.Database.HibernateUtil.Util;
+import pl.Shop.Database.Models.Basket;
 import pl.Shop.Database.Models.User;
 
 import java.math.BigDecimal;
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
+
+    private BasketDao basketDao = new BasketDao();
 
     public static boolean isNumeric(String str) {
         try {
@@ -23,11 +26,14 @@ public class UserDao {
 
     public void createNewUser(String name, String password, boolean isAdmin, BigDecimal balance){
         User user = new User();
+        BasketDao basketDao = new BasketDao();
         user.setName(name);
         user.setPassword(password);
         user.setAdmin(isAdmin);
         user.setLogged(false);
         user.setBalance(balance);
+        //basketDao.createNewBasket(user);
+        //user.addBasket(  );
 
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -58,6 +64,8 @@ public class UserDao {
         }
 
     }
+
+
 
     public void updateUserLoginStatus(String name, boolean value){
         Transaction transaction = null;
@@ -151,6 +159,38 @@ public class UserDao {
             e.printStackTrace();
         }
         return users;
+    }
+
+    public void addNewBasket(){
+        if( userHaveActiveBasket() )
+            return;
+        basketDao.createNewBasket();
+
+        /*Transaction transaction = null;
+        try(Session session = Util.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+            session.createQuery("UPDATE User U SET U.baskets = :baskets")
+                    .setParameter("baskets", baskets)
+                    .executeUpdate();
+            transaction.commit();
+            session.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }*/
+    }
+
+    public boolean userHaveActiveBasket(){
+        User user = getLoggedUser();
+        if( basketDao.getActiveBucketOfUser(user) != null){
+            return true;
+        }
+
+        return false;
+    }
+
+    public void deactivateUserBasket(){
+        User user = getLoggedUser();
+        basketDao.updateBucketActivity(false, user);
     }
 
 }

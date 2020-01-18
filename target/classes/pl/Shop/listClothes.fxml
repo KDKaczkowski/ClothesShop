@@ -20,7 +20,7 @@
             <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="140.0" />
             <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="60.0" />
           <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
-          <ColumnConstraints minWidth="10.0" prefWidth="140.0" />
+          <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="120.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
         </columnConstraints>
         <rowConstraints>
@@ -46,7 +46,7 @@
             <Separator GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
             <Separator GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
             <Separator GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" />
-            <Button mnemonicParsing="false" onAction="#clearTypeComboBox" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button mnemonicParsing="false" onAction="#clearTypeComboBox" style="-fx-background-image: /image/baskett;" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -67,6 +67,7 @@
             <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
             <TableColumn fx:id="sizeColumn" prefWidth="50.0" text="Size" />
             <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="buyClothColumn" prefWidth="75.0" text="Buy cloth" />
         </columns>
       </TableView>
    </children>

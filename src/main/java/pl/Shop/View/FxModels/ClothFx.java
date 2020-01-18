@@ -2,8 +2,8 @@ package pl.Shop.View.FxModels;
 
 import javafx.beans.property.*;
 import javafx.collections.ObservableList;
+import pl.Shop.Database.Models.BasketDetails;
 import pl.Shop.Database.Models.Brand;
-import pl.Shop.Database.Models.BucketDetails;
 import pl.Shop.Database.Models.Size;
 import pl.Shop.Database.Models.Type;
 
@@ -18,7 +18,7 @@ public class ClothFx {
     private ObjectProperty<BigDecimal> price = new SimpleObjectProperty<>();
     private ObjectProperty<Size> size = new SimpleObjectProperty<>();
     private IntegerProperty quantity = new SimpleIntegerProperty();
-    private ListProperty<BucketDetails> bucketDetails = new SimpleListProperty<>();
+    private ListProperty<BasketDetails> basketDetails = new SimpleListProperty<>();
 
     public int getId() {
         return id.get();
@@ -68,16 +68,16 @@ public class ClothFx {
         this.quantity.set(quantity);
     }
 
-    public ObservableList<BucketDetails> getBucketDetails() {
-        return bucketDetails.get();
+    public ObservableList<BasketDetails> getBasketDetails() {
+        return basketDetails.get();
     }
 
-    public ListProperty<BucketDetails> bucketDetailsProperty() {
-        return bucketDetails;
+    public ListProperty<BasketDetails> basketDetailsProperty() {
+        return basketDetails;
     }
 
-    public void setBucketDetails(ObservableList<BucketDetails> bucketDetails) {
-        this.bucketDetails.set(bucketDetails);
+    public void setBasketDetails(ObservableList<BasketDetails> basketDetails) {
+        this.basketDetails.set(basketDetails);
     }
 
 

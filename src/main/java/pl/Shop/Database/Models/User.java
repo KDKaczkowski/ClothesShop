@@ -41,7 +41,7 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Bucket> buckets = new ArrayList<>();
+    private List<Basket> baskets = new ArrayList<>();
 
 
 
@@ -85,11 +85,15 @@ public class User {
         this.balance = balance;
     }
 
-    public List<Bucket> getBuckets() {
-        return buckets;
+    public List<Basket> getBaskets() {
+        return baskets;
     }
 
-    public void setBuckets(ArrayList<Bucket> buckets) {
-        this.buckets = buckets;
+    public void setBaskets(ArrayList<Basket> baskets) {
+        this.baskets = baskets;
+    }
+
+    public void addBasket(Basket basket){
+        this.baskets.add(basket);
     }
 }

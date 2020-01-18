@@ -42,7 +42,7 @@ public class Cloth {
     private int quantity;
 
     @OneToMany(mappedBy = "cloth", cascade = CascadeType.ALL)
-    private List<BucketDetails> bucketDetails = new ArrayList<>();
+    private List<BasketDetails> basketDetails = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -100,11 +100,11 @@ public class Cloth {
         this.id = id;
     }
 
-    public List<BucketDetails> getBucketDetails() {
-        return bucketDetails;
+    public List<BasketDetails> getBasketDetails() {
+        return basketDetails;
     }
 
-    public void setBucketDetails(List<BucketDetails> bucketDetails) {
-        this.bucketDetails = bucketDetails;
+    public void setBasketDetails(List<BasketDetails> basketDetails) {
+        this.basketDetails = basketDetails;
     }
 }

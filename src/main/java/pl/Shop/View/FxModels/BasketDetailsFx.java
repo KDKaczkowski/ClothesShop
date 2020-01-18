@@ -4,18 +4,18 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import pl.Shop.Database.Models.Bucket;
+import pl.Shop.Database.Models.Basket;
 import pl.Shop.Database.Models.Cloth;
 
 import java.math.BigDecimal;
 
-public class BucketDetailsFx {
+public class BasketDetailsFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();
     private IntegerProperty amountBought = new SimpleIntegerProperty();
     private ObjectProperty<BigDecimal> summaryPrice = new SimpleObjectProperty<>();
     private ObjectProperty<Cloth> cloth = new SimpleObjectProperty<>();
-    private ObjectProperty<Bucket> bucket = new SimpleObjectProperty<>();
+    private ObjectProperty<Basket> basket = new SimpleObjectProperty<>();
 
 
 
@@ -67,16 +67,16 @@ public class BucketDetailsFx {
         this.cloth.set(cloth);
     }
 
-    public Bucket getBucket() {
-        return bucket.get();
+    public Basket getBasket() {
+        return basket.get();
     }
 
-    public ObjectProperty<Bucket> bucketProperty() {
-        return bucket;
+    public ObjectProperty<Basket> basketProperty() {
+        return basket;
     }
 
-    public void setBucket(Bucket bucket) {
-        this.bucket.set(bucket);
+    public void setBasket(Basket basket) {
+        this.basket.set(basket);
     }
 
 }

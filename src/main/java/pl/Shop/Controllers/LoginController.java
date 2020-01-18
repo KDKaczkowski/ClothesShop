@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import pl.Shop.App;
+import pl.Shop.Database.Dao.BasketDao;
 import pl.Shop.Database.Dao.UserDao;
 import pl.Shop.Database.Models.User;
 
@@ -33,7 +34,7 @@ public class LoginController {
         else if(user.getPassword().equals( txtPassword.getText())){
 
             userDao.updateUserLoginStatus( user.getName(), true);
-            userDao.printAllUsers();
+
             App.setRoot("mainPage");
         } else {
             loginStatus.setText("Login Failed");

@@ -4,21 +4,21 @@ package pl.Shop.Database.Dao;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import pl.Shop.Database.HibernateUtil.Util;
-import pl.Shop.Database.Models.Bucket;
-import pl.Shop.Database.Models.BucketDetails;
+import pl.Shop.Database.Models.Basket;
+import pl.Shop.Database.Models.BasketDetails;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BucketDetailsDao {
+public class BasketDetailsDao {
 
     private int createNewBcuketDetails(){
-        BucketDetails bucketDetails = new BucketDetails();
+        BasketDetails basketDetails = new BasketDetails();
         int id = -1;
         Transaction transaction = null;
         try(Session session = Util.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
-            id = (int) session.save(bucketDetails);
+            id = (int) session.save(basketDetails);
             transaction.commit();
             session.close();
         } catch (Exception e){
@@ -30,18 +30,18 @@ public class BucketDetailsDao {
         return id;
     }
 
-    private List< BucketDetails > getAllBucketsDetails(){
-        List< BucketDetails > bucketDetails = new ArrayList<>();
+    private List<BasketDetails> getAllBucketsDetails(){
+        List<BasketDetails> basketDetails = new ArrayList<>();
         try(Session session = Util.getSessionFactory().openSession()){
-            bucketDetails = session.createQuery("from BucketDetails", BucketDetails.class).list();
+            basketDetails = session.createQuery("from BasketDetails", BasketDetails.class).list();
             session.close();
         } catch(Exception e){
             e.printStackTrace();
         }
-        return bucketDetails;
+        return basketDetails;
     }
 
-    private List< BucketDetails > getBucketsDetailsForBucket(Bucket bucket){
+    private List<BasketDetails> getBucketsDetailsForBucket(Basket basket){
         return new ArrayList<>();
     }
 }

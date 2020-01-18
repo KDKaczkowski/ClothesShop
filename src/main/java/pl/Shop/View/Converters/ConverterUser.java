@@ -12,7 +12,7 @@ public class ConverterUser {
         user.setAdmin( userFx.getAdmin() );
         user.setBalance( userFx.getBalance() );
         user.setLogged( userFx.getLogged() );
-        //user.setBuckets( userFx.getBuckets() );
+        //user.setBaskets( userFx.getBaskets() );
 
         return user;
     }
@@ -24,7 +24,7 @@ public class ConverterUser {
         userFx.setAdmin( user.getAdmin() );
         userFx.setBalance( user.getBalance() );
         userFx.setLogged( user.getLogged() );
-        //userFx.setBuckets( user.getBuckets() );
+        //userFx.setBaskets( user.getBaskets() );
 
         return userFx;
     }

@@ -14,7 +14,7 @@ public class ConverterCloth {
         cloth.setPrice( clothFx.getPrice() );
         cloth.setBrand( clothFx.getBrand() );
         cloth.setType( clothFx.getType() );
-        //cloth.setBucketDetails( clothFx.getBucketDetails() );
+        //cloth.setBasketDetails( clothFx.getBasketDetails() );
         return cloth;
     }
 
@@ -27,7 +27,7 @@ public class ConverterCloth {
         clothFx.setPrice( cloth.getPrice() );
         clothFx.setBrand( cloth.getBrand() );
         clothFx.setType( cloth.getType() );
-        //clothFx.setBucketDetails( cloth.getBucketDetails() );
+        //clothFx.setBasketDetails( cloth.getBasketDetails() );
         return clothFx;
     }
 }

@@ -2,16 +2,16 @@ package pl.Shop.View.FxModels;
 
 import javafx.beans.property.*;
 import javafx.collections.ObservableList;
-import pl.Shop.Database.Models.BucketDetails;
+import pl.Shop.Database.Models.BasketDetails;
 
 import java.math.BigDecimal;
 
-public class BucketFx {
+public class BasketFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();
     private BooleanProperty isActive = new SimpleBooleanProperty();
     private ObjectProperty<BigDecimal> summaryPrice = new SimpleObjectProperty<>();
-    private ListProperty<BucketDetails> bucketDetails = new SimpleListProperty<>();
+    private ListProperty<BasketDetails> basketDetails = new SimpleListProperty<>();
 
     public int getId() {
         return id.get();
@@ -49,15 +49,15 @@ public class BucketFx {
         this.summaryPrice.set(summaryPrice);
     }
 
-    public ObservableList<BucketDetails> getBucketDetails() {
-        return bucketDetails.get();
+    public ObservableList<BasketDetails> getBasketDetails() {
+        return basketDetails.get();
     }
 
-    public ListProperty<BucketDetails> bucketDetailsProperty() {
-        return bucketDetails;
+    public ListProperty<BasketDetails> basketDetailsProperty() {
+        return basketDetails;
     }
 
-    public void setBucketDetails(ObservableList<BucketDetails> bucketDetails) {
-        this.bucketDetails.set(bucketDetails);
+    public void setBasketDetails(ObservableList<BasketDetails> basketDetails) {
+        this.basketDetails.set(basketDetails);
     }
 }

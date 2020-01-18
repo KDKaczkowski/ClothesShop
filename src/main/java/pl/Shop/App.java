@@ -1,9 +1,6 @@
 package pl.Shop;
 
-import pl.Shop.Database.Dao.BrandDao;
-import pl.Shop.Database.Dao.ClothDao;
-import pl.Shop.Database.Dao.TypeDao;
-import pl.Shop.Database.Dao.UserDao;
+import pl.Shop.Database.Dao.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -41,6 +38,7 @@ public class App extends Application {
         ClothDao clothDao = new ClothDao();
         BrandDao brandDao = new BrandDao();
         TypeDao typeDao = new TypeDao();
+        BasketDao basketDao = new BasketDao();
 
         brandDao.createNewBrand("Reserved");
         brandDao.createNewBrand("Cropp");
@@ -51,6 +49,13 @@ public class App extends Application {
         userDao.createNewUser("Kamil", "123", false, new BigDecimal("9.50") );
         userDao.createNewUser("Aga", "maple", true, new BigDecimal("0.50") );
 
+
+
+
+        //userDao.addNewBasket();
+
+
+        //basketDao.printAllBaskets();
 
         clothDao.createNewCloth("slawe", typeDao.getTypeByName("T-shirt"), brandDao.getBrandByName("Reserved"), new BigDecimal(90.00), Size.XL, 70);
         clothDao.createNewCloth("a jak", typeDao.getTypeByName("Shorts"), brandDao.getBrandByName("Cropp"), new BigDecimal(45.00), Size.S, 0);

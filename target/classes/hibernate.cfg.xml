@@ -2,8 +2,8 @@
 <hibernate-configuration>
     <session-factory>
         <mapping class="pl.Shop.Database.Models.User"/>
-        <mapping class="pl.Shop.Database.Models.Bucket"/>
-        <mapping class="pl.Shop.Database.Models.BucketDetails"/>
+        <mapping class="pl.Shop.Database.Models.Basket"/>
+        <mapping class="pl.Shop.Database.Models.BasketDetails"/>
         <mapping class="pl.Shop.Database.Models.Cloth"/>
         <mapping class="pl.Shop.Database.Models.Type"/>
         <mapping class="pl.Shop.Database.Models.Brand"/>

@@ -2,7 +2,7 @@ package pl.Shop.View.FxModels;
 
 import javafx.beans.property.*;
 import javafx.collections.ObservableList;
-import pl.Shop.Database.Models.Bucket;
+import pl.Shop.Database.Models.Basket;
 
 import java.math.BigDecimal;
 
@@ -14,7 +14,7 @@ public class UserFx {
     private ObjectProperty<BigDecimal> balance = new SimpleObjectProperty<>();
     private BooleanProperty admin = new SimpleBooleanProperty();
     private BooleanProperty logged = new SimpleBooleanProperty();
-    private ListProperty<Bucket> buckets = new SimpleListProperty<>();
+    private ListProperty<Basket> baskets = new SimpleListProperty<>();
 
     public int getId() {
         return id.get();
@@ -88,15 +88,15 @@ public class UserFx {
         this.logged.set(logged);
     }
 
-    public ObservableList<Bucket> getBuckets() {
-        return buckets.get();
+    public ObservableList<Basket> getBaskets() {
+        return baskets.get();
     }
 
-    public ListProperty<Bucket> bucketsProperty() {
-        return buckets;
+    public ListProperty<Basket> basketsProperty() {
+        return baskets;
     }
 
-    public void setBuckets(ObservableList<Bucket> buckets) {
-        this.buckets.set(buckets);
+    public void setBaskets(ObservableList<Basket> baskets) {
+        this.baskets.set(baskets);
     }
 }

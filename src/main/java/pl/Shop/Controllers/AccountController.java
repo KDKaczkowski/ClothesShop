@@ -71,7 +71,7 @@ public class AccountController {
         UserDao userDao = new UserDao();
         User user = userDao.getLoggedUser();
         int index = txtDeposit.getText().indexOf(".");
-        if(txtDeposit.getText().length() > index +2) {
+        if(txtDeposit.getText().length() > index +2 && txtDeposit.getText().contains(".") ) {
             try {
                 txtDeposit.setText(txtDeposit.getText().substring(0, index + 2));
             } catch(IndexOutOfBoundsException e){
