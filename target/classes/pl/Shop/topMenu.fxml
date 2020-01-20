@@ -45,7 +45,7 @@
          </GridPane.margin>
       </ImageView>
       <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToBasketPage" prefHeight="80.0" prefWidth="120.0" text="My Cart" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
-      <ImageView fitHeight="57.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+      <ImageView fitHeight="57.0" fitWidth="51.0" onMouseClicked="#switchToBasketPage" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
          <image>
             <Image url="@../../image/cartttt.png" />
          </image>

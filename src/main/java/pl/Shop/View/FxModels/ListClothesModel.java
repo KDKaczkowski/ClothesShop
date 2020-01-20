@@ -5,10 +5,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.Shop.Database.Dao.*;
-import pl.Shop.Database.Models.Brand;
-import pl.Shop.Database.Models.Cloth;
-import pl.Shop.Database.Models.Type;
-import pl.Shop.Database.Models.User;
+import pl.Shop.Database.Models.*;
 import pl.Shop.View.Converters.ConverterBrand;
 import pl.Shop.View.Converters.ConverterCloth;
 import pl.Shop.View.Converters.ConverterType;
@@ -146,4 +143,6 @@ public class ListClothesModel {
         BasketDao basketDao = new BasketDao();
         basketDao.printAllBaskets();
     }
+
+
 }

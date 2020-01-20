@@ -112,4 +112,39 @@ public class BasketDetailsDao {
         }
         return basketDetails;
     }
+
+    public void deleteBasketDetail(BasketDetails basketDetails){
+
+        Transaction transaction = null;
+        try(Session session = Util.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+
+            session.createQuery("UPDATE Basket B " +
+                    "SET B.summaryPrice = B.summaryPrice - :deletedOrder " +
+                    "WHERE B.id = :id")
+                    .setParameter("deletedOrder", basketDetails.getCost() )
+                    .setParameter("id", basketDetails.getBasket().getId() )
+                    .executeUpdate();
+
+            session.createQuery("UPDATE Cloth C " +
+                    "SET C.quantity = C.quantity + :amountBought " +
+                    "WHERE C.id = :id")
+                    .setParameter("amountBought", basketDetails.getAmountBought())
+                    .setParameter("id", basketDetails.getCloth().getId())
+                    .executeUpdate();
+
+            session.createQuery("DELETE BasketDetails B where B.id = :id")
+                    .setParameter("id", basketDetails.getId())
+                    .executeUpdate();
+
+
+
+            transaction.commit();
+        } catch (Exception e){
+            if(transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
 }

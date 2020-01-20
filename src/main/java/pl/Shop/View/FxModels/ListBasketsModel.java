@@ -55,4 +55,9 @@ public class ListBasketsModel {
     public void setBasketDetailsFxObservableList(ObservableList<BasketDetailsFx> basketDetailsFxObservableList) {
         this.basketDetailsFxObservableList = basketDetailsFxObservableList;
     }
+
+    public void deleteBasketDetail(BasketDetailsFx basketDetailsFx){
+        BasketDetailsDao basketDetailsDao = new BasketDetailsDao();
+        basketDetailsDao.deleteBasketDetail( ConverterBasketDetails.convertToBasketDetails( basketDetailsFx));
+    }
 }
