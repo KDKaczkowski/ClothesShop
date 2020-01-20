@@ -47,6 +47,26 @@ public class ListClothesController {
     private ListClothesModel listClothesModel;
     @FXML
     private void initialize(){
+        this.refreshList();
+
+        this.buyClothColumn.setCellFactory(s -> new TableCell<ClothFx, ClothFx>(){
+            Button button = createBuyClothButton();
+            @Override
+            protected void updateItem(ClothFx clothFx, boolean b) {
+                super.updateItem(clothFx, b);
+
+                if(!b){
+                    setGraphic(button);
+                    button.setOnAction(actionEvent -> {
+                        listClothesModel.addToCart(clothFx);
+                        refreshList();
+                    });
+                }
+            }
+        });
+
+    }
+    public void refreshList(){
         this.listClothesModel = new ListClothesModel();
         this.listClothesModel.init();
 
@@ -64,22 +84,6 @@ public class ListClothesController {
         this.sizeColumn.setCellValueFactory(s -> s.getValue().sizeProperty());
         this.quantityColumn.setCellValueFactory(s -> s.getValue().quantityProperty());
         this.buyClothColumn.setCellValueFactory(s -> new SimpleObjectProperty<>(s.getValue()));
-
-        this.buyClothColumn.setCellFactory(s -> new TableCell<ClothFx, ClothFx>(){
-            Button button = createBuyClothButton();
-            @Override
-            protected void updateItem(ClothFx clothFx, boolean b) {
-                super.updateItem(clothFx, b);
-
-                if(!b){
-                    setGraphic(button);
-                    button.setOnAction(actionEvent -> {
-                        listClothesModel.addToCart(clothFx);
-                    });
-                }
-            }
-        });
-
     }
 
     public void filterOnActionComboBox() {

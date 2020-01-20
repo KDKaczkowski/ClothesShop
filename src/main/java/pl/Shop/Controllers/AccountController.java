@@ -39,7 +39,7 @@ public class AccountController {
     private void initialize(){
         ObservableList<UserFx> userFxObservableList = FXCollections.observableArrayList();
         UserDao userDao = new UserDao();
-        User user = userDao.getUserByName("Kamil");
+        User user = userDao.getLoggedUser();
         userFxObservableList.add(ConverterUser.convertToUserFx( user ));
 
         this.accountTableView.setItems( userFxObservableList );
@@ -83,7 +83,8 @@ public class AccountController {
                 || txtDeposit.getText().isBlank()
                 || txtDeposit.getText().contains(" ")
                 || txtDeposit.getText().contains(",")
-                || !isNumeric )
+                || txtDeposit.getText().contains("-")
+                )
         {
             depositStatus.setTextFill(Color.RED);
             depositStatus.setText("Deposit Failed");
@@ -92,6 +93,7 @@ public class AccountController {
             userDao.updateUserBalance(user.getName(), toDeposit);
             depositStatus.setTextFill(Color.GREEN);
             depositStatus.setText("Deposit Successfully");
+            initialize();
             userDao.printAllUsers();
         }else{
             depositStatus.setTextFill(Color.RED);

@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.paint.Color;
 import pl.Shop.App;
 import pl.Shop.Database.Dao.UserDao;
+import pl.Shop.Database.Models.Basket;
 import pl.Shop.Database.Models.Cloth;
 import pl.Shop.View.FxModels.*;
 
@@ -40,7 +41,11 @@ public class BasketController {
     @FXML
     private void initialize(){
         UserDao userDao = new UserDao();
-        BigDecimal pay = userDao.getActiveBasketOfLoggedUser().getSummaryPrice();
+        Basket basket = userDao.getActiveBasketOfLoggedUser();
+        BigDecimal pay = new BigDecimal("0.00");
+        if(basket != null ) {
+            pay = basket.getSummaryPrice();
+        }
         BigDecimal balance = userDao.getLoggedUser().getBalance();
         txtBalance.setText( balance.toString() );
         txtToPay.setText( pay.toString() );
@@ -63,8 +68,13 @@ public class BasketController {
 
     }
 
+
     @FXML
-    public void payForClothes(ActionEvent actionEvent) {
+    public void payForClothes() {
+        UserDao userDao = new UserDao();
+        System.out.println(userDao.payForClothes() + "---------------------------------------------------");
+        initialize();
+
     }
 
     public void switchToMain(ActionEvent actionEvent) throws IOException {

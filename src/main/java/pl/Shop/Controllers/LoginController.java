@@ -1,6 +1,8 @@
 package pl.Shop.Controllers;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -25,14 +27,14 @@ public class LoginController {
     }
 
     @FXML
-    private void login() throws IOException{
+    private void login() throws IOException, NoSuchAlgorithmException {
         UserDao userDao = new UserDao();
         BasketDao basketDao = new BasketDao();
         User user = userDao.getUserByName( txtUsername.getText() );
         if ( user == null ) {
             loginStatus.setText("Login Failed");
         }
-        else if(user.getPassword().equals( txtPassword.getText())){
+        else if(user.ifStringIsAPassword( txtPassword.getText() ) ){
 
             userDao.updateUserLoginStatus( user.getName(), true);
             userDao.addNewBasket();

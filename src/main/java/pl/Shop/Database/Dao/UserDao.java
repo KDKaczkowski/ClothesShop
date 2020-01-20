@@ -8,6 +8,7 @@ import pl.Shop.Database.Models.Cloth;
 import pl.Shop.Database.Models.User;
 
 import java.math.BigDecimal;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -208,6 +209,38 @@ public class UserDao {
             this.addNewBasket();
             basketDao.addBasketDetails(cloth);
         }
+    }
+
+    public int payForClothes(){
+        if( !userHaveActiveBasket() ){
+            return 1;
+        }
+        else {
+            Transaction transaction = null;
+            User user = this.getLoggedUser();
+            Basket basket = this.getActiveBasketOfLoggedUser();
+            try(Session session = Util.getSessionFactory().openSession()){
+                transaction = session.beginTransaction();
+                if(user.getBalance().compareTo( basket.getSummaryPrice() ) < 0)
+                    return -1;
+                session.createQuery("update User U SET U.balance = U.balance - :toPay WHERE U.name = :name")
+                        .setParameter("toPay", basket.getSummaryPrice())
+                        .setParameter("name", user.getName())
+                        .executeUpdate();
+                session.createQuery("UPDATE Basket B SET B.isActive = false WHERE B.id = :id")
+                        .setParameter("id", basket.getId())
+                        .executeUpdate();
+                transaction.commit();
+                session.close();
+                return 0;
+            } catch (Exception e){
+                if(transaction != null){
+                    transaction.rollback();
+                }
+                e.printStackTrace();
+            }
+        }
+        return -1;
     }
 
 }

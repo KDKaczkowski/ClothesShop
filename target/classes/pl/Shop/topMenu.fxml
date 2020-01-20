@@ -12,9 +12,9 @@
 
 <GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.Shop.Controllers.TopMenuController">
   <columnConstraints>
-    <ColumnConstraints halignment="LEFT" maxWidth="1.7976931348623157E308" minWidth="120.0" />
+    <ColumnConstraints halignment="LEFT" maxWidth="1.7976931348623157E308" minWidth="240.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+      <ColumnConstraints halignment="RIGHT" minWidth="120.0" prefWidth="120.0" />
     <ColumnConstraints halignment="RIGHT" minWidth="120.0" />
   </columnConstraints>
   <rowConstraints>

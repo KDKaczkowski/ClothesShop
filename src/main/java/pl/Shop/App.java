@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.Shop.Database.DbInitializer;
 import pl.Shop.Database.Models.Size;
 
 import java.io.IOException;
@@ -33,8 +34,9 @@ public class App extends Application {
 
 
     public static void main(String[] args) {
-
-        UserDao userDao = new UserDao();
+        DbInitializer dbInitializer = new DbInitializer();
+        dbInitializer.init();
+        /*UserDao userDao = new UserDao();
         ClothDao clothDao = new ClothDao();
         BrandDao brandDao = new BrandDao();
         TypeDao typeDao = new TypeDao();
@@ -62,7 +64,7 @@ public class App extends Application {
 
         userDao.printAllUsers();
 
-        clothDao.printAllClothes();
+        clothDao.printAllClothes();*/
         /*User user1 = new User();
         User user2 = new User();
 

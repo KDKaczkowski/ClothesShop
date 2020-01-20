@@ -1,8 +1,14 @@
 package pl.Shop.Database.Models;
 import com.sun.istack.NotNull;
 
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.security.Key;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,8 +63,39 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public boolean ifStringIsAPassword(String example) {
+        try {
+            String key = "Bar12345Bar12345"; // 128 bit key
+            // Create key and cipher
+            Key aesKey = new SecretKeySpec(key.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            // encrypt the text
+            cipher.init(Cipher.ENCRYPT_MODE, aesKey);
+            byte[] encrypted = cipher.doFinal(example.getBytes());
+            example = new String(encrypted);
+            // decrypt the text
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return this.password.equals( example );
+    }
+
+    public void setPassword(String password){
+        try {
+            String key = "Bar12345Bar12345"; // 128 bit key
+            // Create key and cipher
+            Key aesKey = new SecretKeySpec(key.getBytes(), "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            // encrypt the text
+            cipher.init(Cipher.ENCRYPT_MODE, aesKey);
+            byte[] encrypted = cipher.doFinal(password.getBytes());
+            this.password = new String(encrypted);
+            // decrypt the text
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public boolean getAdmin() {

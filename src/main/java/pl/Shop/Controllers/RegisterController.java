@@ -2,6 +2,7 @@ package pl.Shop.Controllers;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.security.NoSuchAlgorithmException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -25,7 +26,7 @@ public class RegisterController {
     }
 
     @FXML
-    private void registerUser() throws IOException {
+    private void registerUser() throws IOException, NoSuchAlgorithmException {
         UserDao userDao = new UserDao();
         if
         ( txtPassword.getText().isBlank()                         //Password or username is blank
