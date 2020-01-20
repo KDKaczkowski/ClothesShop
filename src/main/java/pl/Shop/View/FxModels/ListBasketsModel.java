@@ -5,41 +5,24 @@ import javafx.collections.ObservableList;
 import pl.Shop.Database.Dao.*;
 import pl.Shop.Database.Models.*;
 import pl.Shop.View.Converters.ConverterBasketDetails;
-import pl.Shop.View.Converters.ConverterBrand;
-import pl.Shop.View.Converters.ConverterCloth;
-import pl.Shop.View.Converters.ConverterType;
+
 
 import java.util.List;
 
+/**
+ * klasa-model komunikująca zdarzenia na Obiektach JavaFx pojedynczych zamowien w koszyku z Dao
+ */
 public class ListBasketsModel {
 
     private ObservableList<BasketDetailsFx> basketDetailsFxObservableList = FXCollections.observableArrayList();
 
     public void init(){
         initBasketDetailsFx();
-        /*initTypeFx();
-        initBrandFx();
-        initClothFx();*/
     }
 
-    /*public void initClothFx(){
-        ClothDao clothDao = new ClothDao();
-        List<Cloth> cloths = clothDao.getAllClothes();
-        cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
-    }
-
-    public void initTypeFx(){
-        TypeDao typeDao = new TypeDao();
-        List<Type> types = typeDao.getAllTypes();
-        types.forEach(s -> this.typeFxObservableList.add(ConverterType.convertToTypeFx( s )));
-    }
-
-    public void initBrandFx(){
-        BrandDao brandDao = new BrandDao();
-        List<Brand> brands = brandDao.getAllBrands();
-        brands.forEach(s -> this.brandFxObservableList.add(ConverterBrand.convertToBrandFx( s )));
-    }*/
-
+    /**
+     * inicjalizacja listy zawierajacej wszystkie pojedyncze zmowienia
+     */
     public void initBasketDetailsFx(){
         BasketDetailsDao basketDetailsDao = new BasketDetailsDao();
         UserDao userDao = new UserDao();

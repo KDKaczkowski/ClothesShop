@@ -12,6 +12,10 @@ import pl.Shop.View.Converters.ConverterType;
 
 import java.util.List;
 
+
+/**
+ * klasa-model komunikująca zdarzenia na Obiektach JavaFx ubran z Dao
+ */
 public class ListClothesModel {
 
     private ObservableList<ClothFx> clothFxObservableList = FXCollections.observableArrayList();
@@ -21,7 +25,9 @@ public class ListClothesModel {
     private ObjectProperty<TypeFx> typeFxObjectProperty = new SimpleObjectProperty<>();
     private ObjectProperty<BrandFx> brandFxObjectProperty = new SimpleObjectProperty<>();
 
-
+    /**
+     * inicjalizacja wszystkich list
+     */
     public void init(){
         ClothDao clothDao = new ClothDao();
         List< Cloth > cloths = clothDao.getAllClothes();
@@ -31,6 +37,9 @@ public class ListClothesModel {
         initBrands();
     }
 
+    /**
+     * inicjalizacja listy typów ubran
+     */
     private void initTypes() {
         TypeDao typeDao = new TypeDao();
         List<Type> types = typeDao.getAllTypes();
@@ -43,6 +52,9 @@ public class ListClothesModel {
         brands.forEach(s -> this.brandFxObservableList.add(ConverterBrand.convertToBrandFx( s )));
     }
 
+    /**
+     * funkcja filtrujaca liste ubran
+     */
     public void filterClothesList(){
         if(getTypeFxObjectProperty() != null && getBrandFxObjectProperty() != null){ //Filter by type and brand
             filterClothesByTypeAndBrand();
@@ -57,6 +69,10 @@ public class ListClothesModel {
             clothesNoFilter();
         }
     }
+
+    /**
+     * funkcja wyswietlajaca lste ubran bez filtra
+     */
     private void clothesNoFilter(){
         ClothDao clothDao = new ClothDao();
         List< Cloth > cloths = clothDao.getAllClothes();
@@ -64,6 +80,9 @@ public class ListClothesModel {
         cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
     }
 
+    /**
+     * filtrowanie listy po typie
+     */
     private void filterClothesByType(){
         ClothDao clothDao = new ClothDao();
         List< Cloth > cloths = clothDao.getClothesOfType( ConverterType.convertToType( getTypeFxObjectProperty() ) );
@@ -72,6 +91,9 @@ public class ListClothesModel {
 
     }
 
+    /**
+     * filtrowanie listy po marce
+     */
     private void filterClothesByBrand(){
         ClothDao clothDao = new ClothDao();
         List< Cloth > cloths = clothDao.getClothesOfBrand( ConverterBrand.convertToBrand( getBrandFxObjectProperty() ) );
@@ -79,6 +101,9 @@ public class ListClothesModel {
         cloths.forEach(s -> this.clothFxObservableList.add(ConverterCloth.convertToClothFx( s )));
     }
 
+    /**
+     * filtrowanie listy po typie i marce
+     */
     private void filterClothesByTypeAndBrand(){
         ClothDao clothDao = new ClothDao();
         List< Cloth > cloths = clothDao.getClothesOfTypeAndBrand(
@@ -137,6 +162,10 @@ public class ListClothesModel {
         this.brandFxObjectProperty.set(brandFxObjectProperty);
     }
 
+    /**
+     * funkcja odpowiadajaca za przekazanie zdarzenia dodania do koszyka dalej
+     * @param clothFx
+     */
     public void addToCart(ClothFx clothFx) {
         UserDao userDao = new UserDao();
         userDao.addClothToBasket( ConverterCloth.convertToCloth(clothFx) );

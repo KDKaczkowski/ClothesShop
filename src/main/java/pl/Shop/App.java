@@ -11,7 +11,9 @@ import pl.Shop.Database.DbInitializer;
 
 import java.io.IOException;
 
-
+/**
+ * glowna klasa programu
+ */
 public class App extends Application {
 
     private static Scene scene;

@@ -5,25 +5,42 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * klasa tworzaca model koszyka w programie, wykorzystywany do tworzenia bazy danych
+ */
 @Entity
 @Table(name = "Basket")
 public class Basket {
 
+    /**
+     * id uzytkownika
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-
+    /**
+     * czy koszyk jest aktywny
+     */
     @Column(name = "isActive")
     private boolean isActive;
 
+    /**
+     * laczna kwota do zaplaty za koszyk
+     */
     @Column(name = "summaryPrice")
     private BigDecimal summaryPrice;
 
+    /**
+     * uzytkownik do ktorego koszyk nalezy
+     */
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id")
     private User user;
 
+    /**
+     * lista pojedynczych zamowien w koszyku
+     */
     @OneToMany(mappedBy = "basket", cascade = CascadeType.ALL)
     private List<BasketDetails> basketDetails = new ArrayList<>();
 

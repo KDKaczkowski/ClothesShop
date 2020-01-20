@@ -7,40 +7,67 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * klasa tworzaca model ubrania w programie, wykorzystywany do tworzenia bazy danych
+ */
 @Entity
 @Table(name = "Cloth")
 public class Cloth {
 
+    /**
+     * id ubrania
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
+    /**
+     * nazwa ubrania
+     */
     @Column(name = "name")
     @NotNull
     private String name;
 
+    /**
+     * typ ubrania
+     */
     @ManyToOne(optional = false)
     @JoinColumn(name = "type_id")
     private Type type;
 
+    /**
+     * marka ubrania
+     */
     @ManyToOne(optional = false)
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
+    /**
+     * cena ubrania
+     */
     @Column(name = "price")
     @NotNull
     private BigDecimal price;
 
+    /**
+     * rozmiar ubrania
+     */
     @Column(name = "size")
     @Enumerated(EnumType.STRING)
     @NotNull
     private Size size;
 
+    /**
+     * ilosc dostepnych ubran
+     */
     @Column(name = "quantity")
     @NotNull
     private int quantity;
 
+    /**
+     * lista pojedynczych zamowien w ktorych jest dane ubranie
+     */
     @OneToMany(mappedBy = "cloth", cascade = CascadeType.ALL)
     private List<BasketDetails> basketDetails = new ArrayList<>();
 

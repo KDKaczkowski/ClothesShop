@@ -11,9 +11,15 @@ import pl.Shop.Database.Models.Type;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * klasa odpowiedzialna za komunikacje z baza danych dla zdarzen dotyczacych ubran
+ */
 public class ClothDao {
 
+    /**
+     * funkcja dodajaca nowe ubranie do bazy danych
+     * @return
+     */
     public int createNewCloth(String name, Type type, Brand brand, BigDecimal price, Size size, int quantity){
         Cloth cloth = new Cloth();
         cloth.setName(name);
@@ -51,7 +57,9 @@ public class ClothDao {
 
     }
 
-
+    /**
+     * funkcja wypisujaca wszystkie ubrania w konsoli
+     */
     public void printAllClothes(){
         StringBuilder output = new StringBuilder();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -72,6 +80,10 @@ public class ClothDao {
         }
     }
 
+    /**
+     * funkcja zwracająca liste wszytkich ubran dostepnych w bazie danych
+     * @return
+     */
     public List<Cloth> getAllClothes(){
         List< Cloth > clothes = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -83,6 +95,11 @@ public class ClothDao {
         return clothes;
     }
 
+    /**
+     * funkcja zwracajaca wszystkie ubrania o danym typie z bazy danych
+     * @param type - typ ubran ktore chcemy otrzymac
+     * @return
+     */
     public List<Cloth> getClothesOfType(Type type){
         List< Cloth > clothes = new ArrayList<>();
         try(Session session = Util.getSessionFactory().openSession()){
@@ -96,6 +113,11 @@ public class ClothDao {
         return  clothes;
     }
 
+    /**
+     * funkcja zwracajaca wszystkie ubrania o danej marki z bazy danych
+     * @param brand - marka ubran ktore chcemy otrzymac
+     * @return
+     */
     public List< Cloth > getClothesOfBrand(Brand brand){
         List< Cloth > clothes = new ArrayList<>();
         try(Session session = Util.getSessionFactory().openSession()){
@@ -109,6 +131,12 @@ public class ClothDao {
         return clothes;
     }
 
+    /**
+     * funkcja zwracajaca wszystkie ubrania o danym typie i marce z bazy danych
+     * @param type - typ ubran ktore chcemy otrzymac
+     * @param brand = marka ubran ktore chcemy otrzymac
+     * @return
+     */
     public List< Cloth > getClothesOfTypeAndBrand(Type type, Brand brand){
         List< Cloth > clothes = new ArrayList<>();
         try(Session session = Util.getSessionFactory().openSession()){

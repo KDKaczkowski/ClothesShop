@@ -10,23 +10,42 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import pl.Shop.App;
 import pl.Shop.Database.Dao.UserDao;
-
+/**
+ * klasa odpowiedzialan za komunikacje widoku registerPage.fxml z baza danych
+ */
 public class RegisterController {
 
+    /**
+     * przechowuje statusu rejestracji
+     */
     @FXML
     public Label registerStatus;
+    /**
+     * przechowuje haslo wprowadzone przez uzytkownika
+     */
     @FXML
     public PasswordField txtPassword;
+    /**
+     * przechowuje nazwa uzytkownika wprowadzona przez uzytkownika
+     */
     @FXML
     public TextField txtUsername;
 
+    /**
+     * przelacza widok na strone logowania
+     * @throws IOException
+     */
     @FXML
     private void switchToLogin() throws IOException {
         App.setRoot("loginPage");
     }
 
+    /**
+     * obluga rejestracji uzytkownika
+     * @throws IOException
+     */
     @FXML
-    private void registerUser() throws IOException, NoSuchAlgorithmException {
+    private void registerUser() throws IOException{
         UserDao userDao = new UserDao();
         if
         ( txtPassword.getText().isBlank()                         //Password or username is blank

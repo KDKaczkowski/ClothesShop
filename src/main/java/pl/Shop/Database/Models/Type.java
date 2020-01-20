@@ -2,10 +2,16 @@ package pl.Shop.Database.Models;
 
 import javax.persistence.*;
 
+/**
+ * klasa tworzaca model typu ubrania w programie, wykorzystywany do tworzenia bazy danych
+ */
 @Entity
 @Table(name = "Type")
 public class Type {
 
+    /**
+     * nazwa typu ubrania
+     */
     @Id
     @Column(name = "name")
     private String name;

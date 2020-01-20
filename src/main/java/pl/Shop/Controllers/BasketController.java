@@ -18,31 +18,65 @@ import pl.Shop.View.FxModels.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 
+
+/**
+ * Klasa odpowiedzialna za komunikacje widoku z bazą danych
+ */
 public class BasketController {
 
 
+    /**
+     * tabela przechowujaca dana o koszyku zalogowanego użykownika
+     */
     @FXML
     private TableView basketTableView;
+    /**
+     * kolumna przechoujaca id ubrania znajdujacego sie w koszyku
+     */
     @FXML
     private TableColumn<BasketDetailsFx, Number> clothIdColumn;
+    /**
+     * kolumna przechowujaca typ ubrania znajdujacego sie w koszyku
+     */
     @FXML
     private TableColumn<BasketDetailsFx, String> typeColumn;
+    /**
+     * kolumna przechowująca nazwe marki ubrania znajdujacego sie w koszyku
+     */
     @FXML
     private TableColumn<BasketDetailsFx, String> brandColumn;
+    /**
+     * kolumna przechowujaca ilosc zakupionych ubran danego typu
+     */
     @FXML
     private TableColumn<BasketDetailsFx, Number> quantityColumn;
+    /**
+     * kolumna przechowujaca informacje o koszcie za dany typ ubrania
+     */
     @FXML
     private TableColumn<BasketDetailsFx, BigDecimal> priceColumn;
+    /**
+     * kolumna przechowujaca przyciski do usuwania z koszyka
+     */
     @FXML
     private TableColumn<BasketDetailsFx, BasketDetailsFx> deleteColumn;
 
+    /**
+     * label przechowujacy informacje o koszcie calkowitym
+     */
     @FXML
     private Label txtToPay ;
+    /**
+     * label przechowujacy informacje o stanie konta zalogowanego uzytkownika
+     */
     @FXML
     private Label txtBalance;
 
     private ListBasketsModel listBasketsModel;
 
+    /**
+     * funkcja inicjalizujaca tablice i labele przy przekierowaniu na te strone
+     */
     @FXML
     private void initialize(){
         this.refreshBasketdetails();
@@ -53,6 +87,9 @@ public class BasketController {
 
     }
 
+    /**
+     * funkcja odswiezajaca dane na stronie
+     */
     private void refreshBasketdetails(){
         UserDao userDao = new UserDao();
         Basket basket = userDao.getActiveBasketOfLoggedUser();
@@ -100,7 +137,9 @@ public class BasketController {
         });
     }
 
-
+    /**
+     * funckaj odpowiedzialna za obsluge zakupu ubran znajdujacych sie w koszyku
+     */
     @FXML
     public void payForClothes() {
         UserDao userDao = new UserDao();
@@ -109,10 +148,18 @@ public class BasketController {
 
     }
 
-    public void switchToMain(ActionEvent actionEvent) throws IOException {
+    /**
+     * funkcja przelaczajaca widok na strone mainPage.fxml
+     * @throws IOException
+     */
+    public void switchToMain() throws IOException {
         App.setRoot("mainPage");
     }
 
+    /**
+     * funkcja tworzaca przycisk sluzacy do usuwania ubran z koszyka
+     * @return Button
+     */
     private Button createDeleteBasketDetailsButton(){
         Button button = new Button();
         Image image = new Image(this.getClass().getResource("/image/delete1.png").toString());

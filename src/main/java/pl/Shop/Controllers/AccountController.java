@@ -16,25 +16,57 @@ import pl.Shop.View.FxModels.UserFx;
 import java.io.IOException;
 import java.math.BigDecimal;
 
+
+/**
+ *klasa odpowiedzialna za komunikacje miedzy widokiem accountPage.fxml a baza danych
+ */
 public class AccountController {
+
+    /**
+     * tablica przechowująca dane o zalogowanym użytkowniku
+     */
     @FXML
     private TableView accountTableView;
+    /**
+     * kolumna tablicy przechowująca imię zalogowanego użytkownika
+     */
     @FXML
     private TableColumn<UserFx, String> nameColumn;
+    /**
+     * kolumna tablicy przechowująca hasło zalogowanego użytkownika
+     */
     @FXML
     private TableColumn<UserFx, String> passwordColumn;
+    /**
+     * kolumna tablicy przechowująca informację, czy użytkownik jest adminem
+     */
     @FXML
     private TableColumn<UserFx, Boolean> adminColumn;
+    /**
+     * kolumna tablicy przechowująca stan konta zalogowanego użytkownika
+     */
     @FXML
     private TableColumn<UserFx, BigDecimal> balanceColumn;
 
+    /**
+     * label odpowiedzialny za zebranie od użykownika kwoty do depozytu na konto
+     */
     @FXML
     private TextField txtDeposit;
+    /**
+     * przycisk potwierdzający depozy pieniędzy na konto
+     */
     @FXML
     private Button depositButton;
+    /**
+     * label pokazujący status transkacja
+     */
     @FXML
     private Label depositStatus;
 
+    /**
+     * funkcja inicjalizująca tabele
+     */
     @FXML
     private void initialize(){
         ObservableList<UserFx> userFxObservableList = FXCollections.observableArrayList();
@@ -50,6 +82,10 @@ public class AccountController {
     }
 
 
+    /**
+     * funkcja odpowiedzialna za wylogowanie użykownika, przekierowuje na stronę logowania po udanym wylogowaniu
+     * @throws IOException
+     */
     @FXML
     private void logout() throws IOException {
         UserDao userDao = new UserDao();
@@ -61,11 +97,18 @@ public class AccountController {
         App.setRoot("loginPage");
     }
 
+    /**
+     * funkcja przekierowująca na mainPage.fxml
+     * @throws IOException
+     */
     @FXML
     private void switchToMain() throws IOException {
         App.setRoot("mainPage");
     }
 
+    /**
+     * funkcja odpowiedzialna za obsługę depozytu pieniędzy
+     */
     @FXML
     private void depositMoney() {
         UserDao userDao = new UserDao();

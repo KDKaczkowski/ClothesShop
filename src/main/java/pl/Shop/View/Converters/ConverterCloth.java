@@ -3,8 +3,16 @@ package pl.Shop.View.Converters;
 import pl.Shop.Database.Models.Cloth;
 import pl.Shop.View.FxModels.ClothFx;
 
+/**
+ * Klasa przetrzymujaca funkcje konwertujace obiekty JavaFX na obiekty Java i odwrotnie.
+ * Dotyczy ubran
+ */
 public class ConverterCloth {
 
+    /**
+     * funkcja konwertujaca klase z JavyFX do klasy Javy
+     * @return
+     */
     public static Cloth convertToCloth(ClothFx clothFx){
         Cloth cloth = new Cloth();
         cloth.setId( clothFx.getId() );
@@ -18,6 +26,10 @@ public class ConverterCloth {
         return cloth;
     }
 
+    /**
+     * funkcja konwertujaca klase z Javy do klasy JavyFx
+     * @return
+     */
     public static ClothFx convertToClothFx(Cloth cloth){
         ClothFx clothFx = new ClothFx();
         clothFx.setId( cloth.getId() );

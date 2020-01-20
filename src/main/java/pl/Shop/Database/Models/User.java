@@ -5,13 +5,13 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.security.Key;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * klasa tworzaca model uzytkownika w programie, wykorzystywany do tworzenia bazy danych
+ */
 @Entity
 @Table(name = "User")
 public class User {
@@ -23,29 +23,44 @@ public class User {
     }
 
 
-
+    /**
+     * nazwa uzykownika
+     */
     @Id
     @Column(name = "name")
     @NotNull
     private String name;
 
+    /**
+     * haslo uzytkownika
+     */
     @Column(name = "pasword")
     @NotNull
     private String password;
-
+    /**
+     * wartosc czy jest adminem uzytkownik
+     */
     @Column(name = "admin")
     @NotNull
     private boolean admin;
 
+    /**
+     * czy uzytkownik jest zalogowany
+     */
     @Column(name = "logged")
     @NotNull
     private boolean logged;
 
+    /**
+     * stan konta uzytkownika
+     */
     @Column(name = "balance")
     @NotNull
     private BigDecimal balance;
 
-
+    /**
+     * lista koszykow uzytkownika
+     */
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Basket> baskets = new ArrayList<>();
 
@@ -63,6 +78,9 @@ public class User {
         return password;
     }
 
+    /**
+     * funkcja sprawdzajaca czy dany String jest haslem
+     */
     public boolean ifStringIsAPassword(String example) {
         try {
             String key = "Bar12345Bar12345"; // 128 bit key
@@ -81,6 +99,9 @@ public class User {
         return this.password.equals( example );
     }
 
+    /**
+     * funkcja zapisujaca i szyfrujaca haslo
+     */
     public void setPassword(String password){
         try {
             String key = "Bar12345Bar12345"; // 128 bit key

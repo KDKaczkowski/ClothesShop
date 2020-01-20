@@ -2,11 +2,16 @@ package pl.Shop.Database.Models;
 
 import javax.persistence.*;
 
-
+/**
+ * klasa tworzaca model marki ubrania w programie, wykorzystywany do tworzenia bazy danych
+ */
 @Entity
 @Table(name = "Brand")
 public class Brand {
 
+    /**
+     * nazwa marki
+     */
     @Id
     @Column(name = "name")
     private String name;

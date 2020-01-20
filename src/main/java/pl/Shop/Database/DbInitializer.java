@@ -4,8 +4,10 @@ import pl.Shop.Database.Dao.*;
 import pl.Shop.Database.Models.Size;
 
 import java.math.BigDecimal;
-import java.security.NoSuchAlgorithmException;
 
+/**
+ * klasa inicjalizujaca dane w bazie danych
+ */
 public class DbInitializer {
     public  void init(){
         UserDao userDao = new UserDao();
@@ -29,13 +31,6 @@ public class DbInitializer {
         userDao.createNewUser("Kamil", "123", false, new BigDecimal("9.50") );
         userDao.createNewUser("234", "123", true, new BigDecimal("0.50") );
 
-
-
-
-        //userDao.addNewBasket();
-
-
-        //basketDao.printAllBaskets();
 
         clothDao.createNewCloth("X34G", typeDao.getTypeByName("T-shirt"), brandDao.getBrandByName("Reserved"), new BigDecimal(90.00), Size.XL, 70);
         clothDao.createNewCloth("B21124", typeDao.getTypeByName("Shorts"), brandDao.getBrandByName("Adidas"), new BigDecimal(45.00), Size.S, 0);

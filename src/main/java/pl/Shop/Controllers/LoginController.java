@@ -12,22 +12,42 @@ import pl.Shop.Database.Dao.BasketDao;
 import pl.Shop.Database.Dao.UserDao;
 import pl.Shop.Database.Models.User;
 
+/**
+ * klasa odpowiedzialan za komunikacje widoku loginPage.fxml z baza danych
+ */
 public class LoginController {
 
+    /**
+     * przechowuje wpisane haslo przez uzytkownika
+     */
     @FXML
     public PasswordField txtPassword;
+    /**
+     * przechowuje wpisany login uzykownika
+     */
     @FXML
     public TextField txtUsername;
+    /**
+     * przechowuje status logowania
+     */
     @FXML
     public Label loginStatus;
 
+    /**
+     * przelaczenie na strone registerPage.fxml
+     * @throws IOException
+     */
     @FXML
     private void switchToRegister() throws IOException {
         App.setRoot("registerPage");
     }
 
+    /**
+     * obsluga logowania uzykownika
+     * @throws IOException
+     */
     @FXML
-    private void login() throws IOException, NoSuchAlgorithmException {
+    private void login() throws IOException{
         UserDao userDao = new UserDao();
         BasketDao basketDao = new BasketDao();
         User user = userDao.getUserByName( txtUsername.getText() );

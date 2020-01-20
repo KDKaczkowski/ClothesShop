@@ -10,9 +10,15 @@ import pl.Shop.Database.Models.User;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * klasa odpowiedzialna za komunikacje z baza danych dla zdarzen dotyczacych koszyka
+ */
 public class BasketDao {
 
-
+    /**
+     * funckaj tworzaca nowy koszyk
+     * @return
+     */
     public int createNewBasket(){
         UserDao userDao = new UserDao();
         Basket basket = new Basket();
@@ -35,6 +41,11 @@ public class BasketDao {
 
     }
 
+    /**
+     * funkcja uaktualniajaca informacje czy koszyk jest aktywny
+     * @param isActive - boolean w zaleznosci czy koszyk ma byc aktywny czy nie
+     * @param user - uzykownik ktorego koszyk mamy zaaktualizowac
+     */
     public void updateBasketActivity(boolean isActive, User user){
         Transaction transaction = null;
         try(Session session = Util.getSessionFactory().openSession()){
@@ -58,12 +69,19 @@ public class BasketDao {
 
     }
 
+    /**
+     * funkcja dodajaca pojedyncze zamowienie do koszyka
+     * @param cloth
+     */
     public void addBasketDetails(Cloth cloth){
         BasketDetailsDao basketDetailsDao = new BasketDetailsDao();
         basketDetailsDao.createNewBasketDetails(cloth);
 
     }
 
+    /**
+     * funkcja wypisujaca wszystkie koszyki w konsoli
+     */
     public void printAllBaskets(){
         StringBuilder output = new StringBuilder();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -82,6 +100,10 @@ public class BasketDao {
         }
     }
 
+    /**
+     * funkcja zwracajaca liste wszystkich koszykow
+     * @return
+     */
     private List<Basket> getAllBaskets(){
         List<Basket> baskets = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()){
@@ -97,6 +119,11 @@ public class BasketDao {
         return new ArrayList<>();
     }
 
+    /**
+     * funkcja zwracajaca aktywny koszyk danego uzytkownika
+     * @param user - uzykownik ktorego koszyk chcemy zwrocic
+     * @return zwraca null jezeli nie ma aktywnego koszyka
+     */
     public Basket getActiveBasketOfUser(User user){
         Basket basket = new Basket();
         basket = null;

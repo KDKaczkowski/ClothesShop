@@ -6,6 +6,10 @@ import pl.Shop.Database.Models.Basket;
 
 import java.math.BigDecimal;
 
+/**
+ * Klasa odpowiedzialna za tworzenia obiektów  w JavaFX na podstawie modelu
+ * Dotyczy uzytkownika
+ */
 public class UserFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();

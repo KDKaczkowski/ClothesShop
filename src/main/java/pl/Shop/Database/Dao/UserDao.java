@@ -11,11 +11,18 @@ import java.math.BigDecimal;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * klasa odpowiedzialna za komunikacje z baza danych dla zdarzen dotyczacych uzytkownika
+ */
 public class UserDao {
 
     private BasketDao basketDao = new BasketDao();
 
+    /**
+     * funkcja sprawdzajaca czy podany String jest numeryczny czy nie
+     * @param str
+     * @return
+     */
     public static boolean isNumeric(String str) {
         try {
             Double.parseDouble(str);
@@ -25,6 +32,9 @@ public class UserDao {
         }
     }
 
+    /**
+     * funkcja tworzaca nowego uzytkownika w bazie danych
+     */
     public void createNewUser(String name, String password, boolean isAdmin, BigDecimal balance){
         User user = new User();
         user.setName(name);
@@ -47,6 +57,11 @@ public class UserDao {
         }
     }
 
+    /**
+     * funkcja aktualizujaca stan konta uzykownika
+     * @param name - uzykownik ktorego stan kkonta chcemy zmienic
+     * @param balance - stan konta jaki chcemy ustawic
+     */
     public void updateUserBalance(String name, BigDecimal balance){
         Transaction transaction = null;
        balance =  balance.add( getUserBalance(name) );
@@ -64,7 +79,11 @@ public class UserDao {
     }
 
 
-
+    /**
+     * funckja aktualizujaca status zalogowania uzytkownika
+     * @param name - nazwa uzytkownika ktorego status chcemy zmienic
+     * @param value - wartosc boolean statusu zalowanania, true- zalogowany
+     */
     public void updateUserLoginStatus(String name, boolean value){
         Transaction transaction = null;
         try(Session session = Util.getSessionFactory().openSession() ){
@@ -82,7 +101,11 @@ public class UserDao {
         }
     }
 
-
+    /**
+     * funkcja aktualizujaca informacje czy uzykownik jest admine czy nie
+     * @param name
+     * @param isAdmin
+     */
     public void updateUserAdminAttribute(String name, boolean isAdmin){
         try(Session session = Util.getSessionFactory().openSession()){
             session.createQuery("UPDATE User set admin = :isAdmin where  name = :name")
@@ -99,6 +122,11 @@ public class UserDao {
 
     }
 
+    /**
+     * funkcja zwracajaca instacje klasy User o podanej nazwie
+     * @param name
+     * @return
+     */
     public User getUserByName(String name){
         User user = new User();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -113,6 +141,10 @@ public class UserDao {
         return user;
     }
 
+    /**
+     * funkcja zwracajaca zalogowanego uzytkownika
+     * @return
+     */
     public User getLoggedUser(){
         User user = new User();
         try(Session session = Util.getSessionFactory().openSession() ){
@@ -124,12 +156,21 @@ public class UserDao {
         }
         return  user;
     }
+
+    /**
+     * funkcja zwracajaca stan konta podanego uzytkownika
+     * @param name
+     * @return
+     */
     public BigDecimal getUserBalance(String name){
         User user = getUserByName(name);
         return user.getBalance();
 
     }
 
+    /**
+     * funkcja wypisujaca wszystkich uzytkowników w konsoli
+     */
     public void printAllUsers(){
         StringBuilder output = new StringBuilder();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -159,6 +200,9 @@ public class UserDao {
         return users;
     }
 
+    /**
+     * funkcja dodajaca nowy koszyk jezeli uzytkownik nie ma aktywnego koszyka
+     */
     public void addNewBasket(){
         if( userHaveActiveBasket() )
             return;
@@ -178,6 +222,9 @@ public class UserDao {
         }*/
     }
 
+    /**
+     * funckaj zwracajaca wartosc boolean w zaleznosci czy uzytkownik ma aktyny koszyk
+     */
     public boolean userHaveActiveBasket(){
 
         User user = getLoggedUser();
@@ -188,6 +235,9 @@ public class UserDao {
         return false;
     }
 
+    /**
+     * funkcja zwracajaca aktynwy koszyk zalogowanego uzytkownika
+     */
     public Basket getActiveBasketOfLoggedUser(){
         if( !userHaveActiveBasket() )
             return null;
@@ -195,12 +245,18 @@ public class UserDao {
             return basketDao.getActiveBasketOfUser( this.getLoggedUser() );
     }
 
+    /**
+     * funkcja dezaktywujaca koszyk zalogowanego uzykownika
+     */
     public void deactivateUserBasket(){
 
         User user = getLoggedUser();
         basketDao.updateBasketActivity(false, user);
     }
 
+    /**
+     * funkcja dodajaca ubranie do koszyka
+     */
     public void addClothToBasket(Cloth cloth){
         if( userHaveActiveBasket() ){
             //Basket basket = this.getActiveBasketOfLoggedUser();
@@ -211,6 +267,10 @@ public class UserDao {
         }
     }
 
+    /**
+     * funkcja obslugujaca zaplate za koszyk
+     * @return 1 jezeli nie ma aktywnego koszyka, -1 jezeli uzykownik nie ma wystarczajace ilosci pieniedzy, 0 jezli transakcja przeszla pomyslnie
+     */
     public int payForClothes(){
         if( !userHaveActiveBasket() ){
             return 1;

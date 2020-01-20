@@ -7,6 +7,9 @@ import
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * klasa tworzaca model pojedynczego zamowienia w koszyku w programie, wykorzystywany do tworzenia bazy danych
+ */
 @Entity
 @Table(name = "BasketDetails")
 public class BasketDetails {
@@ -16,23 +19,37 @@ public class BasketDetails {
         this.cost = new BigDecimal(0);
     }
 
+    /**
+     * id pojedynczego zamowienia
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
+    /**
+     * ilosc zakupionych ubran
+     */
     @Column
     @NotNull
     private int amountBought;
 
+    /**
+     * laczna cena pojedynczego zamowienia
+     */
     @Column
     private BigDecimal cost;
 
+    /**
+     * koszyk w ktorym znajduje sie to pojedyncze zamowienie
+     */
     @ManyToOne(optional = false)
     @JoinColumn(name = "basket_id")
     private Basket basket;
 
-
+    /**
+     * ubranie ktorej zostalo zamowione
+     */
     @ManyToOne(optional = false)
     @JoinColumn(name = "cloth_id")
     private Cloth cloth;

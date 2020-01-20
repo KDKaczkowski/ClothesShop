@@ -6,10 +6,16 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+/**
+ * klasa konfigurjaca polaczenie z baza danych
+ */
 public class Util {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
+    /**
+     * funkcja zwracajaca sesje
+     */
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
@@ -35,6 +41,9 @@ public class Util {
         return sessionFactory;
     }
 
+    /**
+     * funckaj zamykajaca aktywna sesje
+     */
     public static void shutdown() {
         if (registry != null) {
             StandardServiceRegistryBuilder.destroy(registry);

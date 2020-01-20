@@ -9,9 +9,14 @@ import pl.Shop.Database.Models.Brand;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * klasa odpowiedzialna za komunikacje z baza danych dla zdarzen dotyczacych marki ubran
+ */
 public class BrandDao {
-
+    /**
+     * funkcja tworzaca nowa marke ubran
+     * @param name
+     */
     public void createNewBrand(String name){
         Brand brand = new Brand();
         brand.setName(name);
@@ -30,6 +35,11 @@ public class BrandDao {
         }
     }
 
+    /**
+     * funkcja zwracajaca instancje marki dla danej nazwy
+     * @param name nazwa marki ktorej szukamy
+     * @return obiekt Brand
+     */
     public Brand getBrandByName(String name){
         Brand brand = new Brand();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -43,6 +53,10 @@ public class BrandDao {
         return brand;
     }
 
+    /**
+     * funkcja zwracająca listę wszyskich marek ubran
+     * @return
+     */
     public List<Brand> getAllBrands(){
         List< Brand > brands = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()) {

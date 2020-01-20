@@ -9,9 +9,14 @@ import pl.Shop.Database.Models.Type;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * klasa odpowiedzialna za komunikacje z baza danych dla zdarzen dotyczacych typow ubran
+ */
 public class TypeDao {
 
+    /**
+     * funkcja tworzaca nowy typ ubran w bazie danych
+     */
     public void createNewType(String name){
         Type type = new Type();
         type.setName(name);
@@ -30,6 +35,11 @@ public class TypeDao {
         }
     }
 
+    /**
+     * funkcja zwracajaca instacje klasy Type o podanej nazwie
+     * @param name - nazwa typu ktora szukamy
+     * @return
+     */
     public Type getTypeByName(String name){
         Type type = new Type();
         try (Session session = Util.getSessionFactory().openSession()) {
@@ -43,6 +53,10 @@ public class TypeDao {
         return type;
     }
 
+    /**
+     * funkcja zwracajaca liste wszystkich typów ubran w bazie danych
+     * @return
+     */
     public List<Type> getAllTypes(){
         List< Type > types = new ArrayList<>();
         try (Session session = Util.getSessionFactory().openSession()) {

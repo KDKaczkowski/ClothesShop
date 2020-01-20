@@ -9,6 +9,10 @@ import pl.Shop.Database.Models.Cloth;
 
 import java.math.BigDecimal;
 
+/**
+ * Klasa odpowiedzialna za tworzenia obiektów  w JavaFX na podstawie modelu
+ * Dotyczy pojedynczego zamówienia w koszyku
+ */
 public class BasketDetailsFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();

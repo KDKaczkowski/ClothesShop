@@ -11,9 +11,14 @@ import pl.Shop.Database.Models.Cloth;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * klasa odpowiedzialna za komunikacje z baza danych dla zdarzen dotyczacych pojedynczych zamowien w koszyku
+ */
 public class BasketDetailsDao {
-
+    /**
+     * tworzenie pojedynczego zamowienia
+     * @param cloth - ubranie ktore ma zostac zakupione
+     */
     public void createNewBasketDetails(Cloth cloth){
 
         UserDao userDao = new UserDao();
@@ -82,6 +87,10 @@ public class BasketDetailsDao {
 
     }
 
+    /**
+     * funkcja zwracajaca liste wszystkich pojedynczych zamowien we wszystkich koszykach
+     * @return
+     */
     public List<BasketDetails> getAllBasketsDetails(){
         List<BasketDetails> basketDetails = new ArrayList<>();
         try(Session session = Util.getSessionFactory().openSession()){
@@ -92,6 +101,13 @@ public class BasketDetailsDao {
         }
         return basketDetails;
     }
+
+    /**
+     * funkcja ktora sprawdza czy do danego koszyka zostalo juz dodane dane ubranie
+     * @param cloth - ubranie ktore sprawdzamy czy zostalo dodane
+     * @param basket - koszyk ktory sprawdzamy czy do niego zostalo dodane
+     * @return zwraca pojedyncze zamowienie jezeli ubranie zostalo juz kupione lub null jezeli nie zostalo jeszcze kupione
+     */
     public BasketDetails checkIfClothAlreadyBought(Cloth cloth, Basket basket){
         List<BasketDetails> basketDetailsList = getBasketsDetailsForBucket(basket);
         for (int i = 0; i < basketDetailsList.size() ; i++) {
@@ -100,6 +116,12 @@ public class BasketDetailsDao {
         }
         return null;
     }
+
+    /**
+     * funkcja zwracajaca liste wszystkich zamowien w koszyku
+     * @param basket
+     * @return
+     */
     public List<BasketDetails> getBasketsDetailsForBucket(Basket basket){
         List<BasketDetails> basketDetails = new ArrayList<>();
         try(Session session = Util.getSessionFactory().openSession()){
@@ -113,6 +135,10 @@ public class BasketDetailsDao {
         return basketDetails;
     }
 
+    /**
+     * funkcja usuwajaca pojedyncze zamowienie w koszyku
+     * @param basketDetails
+     */
     public void deleteBasketDetail(BasketDetails basketDetails){
 
         Transaction transaction = null;

@@ -9,6 +9,10 @@ import pl.Shop.Database.Models.Type;
 
 import java.math.BigDecimal;
 
+/**
+ * Klasa odpowiedzialna za tworzenia obiektów  w JavaFX na podstawie modelu
+ * Dotyczy ubrania
+ */
 public class ClothFx {
 
     private IntegerProperty id = new SimpleIntegerProperty();
